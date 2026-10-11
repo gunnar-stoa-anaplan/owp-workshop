@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimizer &amp; Future Use Cases — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Optimizer &amp; Future Use Cases</h1>
+      <p class="subtitle">Span-of-control, skill concentration, and weighted optimization</p>
+      <div class="badge-row">
+        <span class="content-badge">Looking Ahead</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Once positions, workers, and skills are all in the CPP, an obvious next question is: could a model help rebalance the org rather than just report on it? That is where Optimizer comes in. This page covers what Optimizer is today and the future use cases the team is exploring on top of OWP.</p>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Safe Harbor</span>
+        <p>Everything on this page beyond Optimizer's current Classic availability is <strong>roadmap and forward-looking</strong>, under Anaplan's safe-harbor caveat. Timing and scope may change. Do not commit a customer to any of it.</p>
+      </div>
+
+      <h2>Optimizer is an extension</h2>
+      <p>Optimizer is <strong>an extension</strong>, not part of the base OWP app. Today it runs only on <strong>Classic</strong>. <strong>Optimizer on Polaris is targeted by end of year</strong> — a roadmap item under safe harbor. Because OWP itself runs on both Classic and Polaris, the Polaris timing matters for any customer who wants both the app and the Optimizer on the same platform.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Note</span>
+        <p>Treat Optimizer like any other extension when you scope it: it sits on top of OWP, it does not change the core app, and its platform availability (Classic today, Polaris targeted end of year) is a real constraint to raise early with the customer.</p>
+      </div>
+
+      <h2>Future use cases</h2>
+      <p>The use cases the team is looking at are all about the shape of the organization, not just its cost. Three come up repeatedly:</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Span of control</h3>
+          <p>Surface managers with too many — or too few — direct reports, and model how to rebalance reporting lines across the org.</p>
+        </div>
+        <div class="card">
+          <h3>Critical-skill concentration</h3>
+          <p>Flag where a critical skill is concentrated in one place — for example, all the machine-learning skills sitting inside a single org — so the risk is visible.</p>
+        </div>
+      </div>
+
+      <p>The worked example the team uses is an org of <strong>~400 people</strong> that has both problems at once: span-of-control issues and critical-skill concentration. From there, the goal is <strong>skill redistribution</strong> — using the Optimizer to suggest how to spread critical skills and reporting load more evenly across the organization.</p>
+
+      <h2>The weighting module idea</h2>
+      <p>To optimize on skills rather than just cost, Optimizer would need a <strong>weighting module</strong> so the math knows which skills matter more. The sketch discussed:</p>
+      <ul>
+        <li>A skill that is <strong>required</strong> gets a weight of <strong>1 or 3</strong>.</li>
+        <li>A <strong>critical skill</strong> adds more weight on top.</li>
+        <li><strong>Expert proficiency</strong> scores higher than lower proficiency.</li>
+      </ul>
+      <p>The variable the Optimizer would solve for could be <strong>cost</strong> or <strong>skill-fit</strong> — that has <strong>not been fully thought through yet</strong>. This is an early design idea, not a delivered feature.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Note</span>
+        <p>The weighting scheme (required = 1 or 3, critical = a bump, expert proficiency = higher) and the choice of variable (cost vs. skill-fit) are still being worked out. Present them as a direction of travel, not a spec.</p>
+      </div>
+
+      <h2>Who's working on it</h2>
+      <p>This work is a collaboration with <strong>Adam Rhodes</strong> (Anaplan pre-sales, UK), planned for later in the year. It ties back to the skills-matching capability in the CPP, which is a manual process out of the box today — the weighted Optimizer is the more automated future the team is aiming at.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./sec-03-lab.html">← Previous</a>
+        <a class="prevnext-btn" href="./91-foundation.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

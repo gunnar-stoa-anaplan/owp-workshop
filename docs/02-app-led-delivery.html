@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App-Led Delivery — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>App-Led Delivery</h1>
+      <p class="subtitle">Starting from a pre-built app, not a blank model</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Method · 1</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>OWP is delivered as a working application, not built from scratch. That changes the shape of the whole engagement. Before you plan a single sprint, you need to understand how app-led delivery differs from the traditional Anaplan approach you may be used to.</p>
+
+      <h2>Two ways to deliver</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Traditional Anaplan delivery</h3>
+          <p>The "blank piece of paper." You build from scratch: gather requirements, run workshops, plan and review sprints, deliver each sprint, run UAT, and repeat. Everything the customer sees, you first have to build.</p>
+        </div>
+        <div class="card">
+          <h3>App-led delivery</h3>
+          <p>You start <em>with</em> a pre-built app that already contains the structure and the logic. Your first move isn't to build — it's to bring the customer's data into a working application and then shape it to fit.</p>
+        </div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 The first action is data</span>
+        <p>"The first action in an Anaplan-app way for [an] application is to load data in it." You are not opening an empty model — you are feeding a real one.</p>
+      </div>
+
+      <h2>The sequence: load, set, customize</h2>
+      <p>App-led delivery follows a deliberate order. Each step assumes the one before it.</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content"><strong>Load data</strong> — Bring the customer's data into the app so it becomes a running application with their positions, employees, and hierarchies in it.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content"><strong>Set / configure the app</strong> — Use the configuration pages to tune the app to the customer: currency, dates, roles, approvers, which workflow to deliver, and so on. Set it first to get the most out of what's already there.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content"><strong>Customize / extend only what's needed</strong> — Once the configured app is running, add or extend only the pieces the customer genuinely needs beyond what ships.</div>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Set first, then customize</span>
+        <p>The guiding rule is "set it first, and then customize" — configure the delivered app so you use the most of its capabilities before you reach for extensions.</p>
+      </div>
+
+      <h2>Why start from the app</h2>
+      <p>The app is not a starter template. It arrives with a large amount of working machinery already in place:</p>
+      <ul>
+        <li><strong>Hundreds of modules</strong> already built and connected.</li>
+        <li><strong>Built-in best practices</strong> baked into the structure and logic.</li>
+        <li><strong>Delivered workflows</strong> ready to route requests.</li>
+        <li><strong>ADO connections</strong> for getting data in and out.</li>
+      </ul>
+      <p>Rebuilding all of this from a blank model would be "months of project just to reach this amount of components." Starting from the app lets you skip straight to configuring and extending.</p>
+
+      <h2>The anti-pattern: lift and shift</h2>
+      <p>The most common mistake is trying to force the customer's current process into the app unchanged.</p>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Don't lift and shift</span>
+        <p>Customers who try to "lift and shift" their existing process into OWP are working against the app — that "is not really what we should be doing." The value is in the best practices the app already carries.</p>
+      </div>
+
+      <p>When a customer does want to fundamentally change the core of the app, that's the moment to slow down and ask <em>why</em>. The right conversation is whether that thing even belongs in OWP at all, or whether it should live somewhere else. Changing the core is not the default move — it's the exception you justify.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./01-owp-overview.html">← Previous</a>
+        <a class="prevnext-btn" href="./03-delivery-lifecycle.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

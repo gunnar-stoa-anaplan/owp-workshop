@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration &amp; Architecture — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Integration &amp; Architecture</h1>
+      <p class="subtitle">ADO, the UDM roadmap, and closed-loop export</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Method · 6</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>OWP is built with integration in mind, but the app itself has a narrow job: it needs data in the right structure so its import action can load it. Everything upstream of that — parsing, transforming, scheduling — is a separate concern you handle with whatever tools fit the customer.</p>
+
+      <h2>Why templates instead of a direct ETL?</h2>
+      <p>A common question: why fill in templates rather than plug straight into SuccessFactors and run the full ETL? You <em>can</em> do the direct integration — data prep is <em>"one of the most-used extensions."</em> But it is <strong>not part of the app</strong>. It's a separate service or model that parses the customer's one big file into the templates.</p>
+
+      <p>The app only needs data in the template <strong>structure</strong> so the <strong>import action</strong> works. That's the boundary: get the data into the expected shape, and the app takes it from there.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Sequence the integration</span>
+        <p>Do proper integration <strong>after</strong> the app is running and the required data is proven. Get the app working with data first; wire up the automated pipeline once you know exactly what the app needs.</p>
+      </div>
+
+      <h2>Tools for getting data in</h2>
+      <p>Any tool is fine for the data-prep layer — pick what suits the customer's stack:</p>
+      <ul>
+        <li><strong>Workday RaaS export + API</strong></li>
+        <li><strong>Informatica</strong> off <strong>Snowflake</strong></li>
+        <li><strong>NEO / DataHub</strong></li>
+        <li><strong>CloudWorks</strong> for scheduling</li>
+      </ul>
+
+      <h2>Moving every app to ADO</h2>
+      <p>Are the apps built with integration in mind? Yes. Some apps ship with data hubs and some don't, but the direction is clear: <em>"the plan is to move every single app to just use ADO"</em> — the Anaplan Data Orchestrator — as the central inbound conduit.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Roadmap / safe harbor</span>
+        <p>Moving every app onto ADO is a forward-looking, roadmap direction under Anaplan's safe-harbor caveat. Timing and scope may change.</p>
+      </div>
+
+      <h2>Closed-loop export back to HCM</h2>
+      <p>The point of planning positions in Anaplan is to get them filled — which means the planned positions have to go back into the HCM system. OWP closes that loop.</p>
+      <p>OWP ships <strong>modules and pages to export positions</strong>. The export can be triggered by API, done manually, or scheduled via workflow. Custom export modules are an <strong>easy extension with no impact on the app</strong> — additive, so they don't threaten the upgrade path.</p>
+
+      <div class="callout-do">
+        <span class="callout-label">✅ Do</span>
+        <p>When a customer needs positions pushed back to their HCM in a specific shape, build a custom export module. It sits on top of the delivered export capability and leaves the core app untouched.</p>
+      </div>
+
+      <h2>The UDM — Unified Data Model</h2>
+      <p>The Unified Data Model is a roadmap direction for shared metadata across apps. Think of it like <strong>Oracle DRM</strong> — a shared library of metadata.</p>
+      <p>Instead of replicating something like a <strong>cost-center hierarchy</strong> across four or five apps and ADO instances, you hold it once in the UDM and use <strong>ADO plus workflow</strong> to push it to multiple apps — IFP, OWP, Supply Chain, T&amp;Q — simultaneously. In the presenter's words, <em>"that's where we're moving to."</em></p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Roadmap / safe harbor</span>
+        <p>The UDM is a forward-looking, roadmap item under Anaplan's safe-harbor caveat. It describes the intended direction, not a shipped capability, and details may change.</p>
+      </div>
+
+      <h2>HCM systems referenced</h2>
+      <p>The systems that come up across the sessions as sources or targets for OWP data:</p>
+      <ul>
+        <li><strong>Workday</strong> (the primary example)</li>
+        <li><strong>SuccessFactors</strong></li>
+        <li>Generic <strong>HCM</strong></li>
+        <li><strong>ATS</strong> and talent / recruiting systems</li>
+      </ul>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Pending SME Input</span>
+        <p>[PENDING SME input] <em>The full OWP architecture and the PATH walkthrough were part of a session segment that was not captured on the workshop recordings. The complete architecture diagram and PATH detail are to be supplied by an SME.</em></p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./06-delivery-timeline.html">← Previous</a>
+        <a class="prevnext-btn" href="./wfb-01-overview.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

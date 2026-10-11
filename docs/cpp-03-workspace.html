@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The CPP Workspace — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>The CPP Workspace</h1>
+      <p class="subtitle">Position-plan grid, worker cards, and start-anywhere drill</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Walkthrough</span>
+        <span class="content-badge">15 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>The CPP workspace is where the day-to-day work happens. It brings together the position-plan grid, worker cards with their KPIs, and a set of drill-through pages that let you move from any starting point to the job, worker, or org behind it.</p>
+
+      <h2>The position-plan grid</h2>
+      <p>The position-plan grid is the main view. Each row is a position, and the columns describe it end to end — whether it is filled, who is in it, where it sits, and what it costs:</p>
+      <ul>
+        <li>Which positions are <strong>filled</strong>.</li>
+        <li><strong>Worker names</strong> for filled positions.</li>
+        <li>The <strong>org</strong>.</li>
+        <li>The associated <strong>cost center</strong>.</li>
+        <li>The <strong>mappings</strong>.</li>
+        <li>The <strong>costs</strong>.</li>
+        <li>The <strong>location</strong>.</li>
+        <li>Where a plan position was created — <strong>forecast vs. budget</strong>.</li>
+      </ul>
+
+      <img src="../img/screens/cpp-03-position-grid.jpg" alt="OWP Application (Golden Copy) HRBP page — the position-plan grid of planned and filled positions with org, cost center, cost, location and forecast source, above the Workers table showing Worker Location, FTE, Start Date, Performance Rating, Company Tenure, Time in Position, Annual Fully Loaded Cost and Compa Ratio, with Worker Transfer / Worker Departure actions and Headcount-by-Performance, Generational, Gender and Race/Ethnicity distribution charts" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">The HRBP position-plan grid and Workers table, with the distribution charts below.</p>
+
+      <h2>Worker cards and KPIs</h2>
+      <p>Each worker has a card that surfaces a set of KPIs. The card is customizable — KPIs can be shown, unlisted, or removed depending on what the customer wants to expose. The KPIs include:</p>
+      <ul>
+        <li>Tenure</li>
+        <li>Position</li>
+        <li>Location</li>
+        <li>Gender</li>
+        <li>Generational distribution</li>
+        <li>Race</li>
+        <li>Ethnicity</li>
+        <li>Performance rating</li>
+      </ul>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 The DEI KPIs are a per-customer toggle</span>
+        <p>The diversity-related KPIs — gender, generational distribution, race, ethnicity, and performance rating — are defaulted to <strong>"unlisted"</strong> or removed entirely if the customer declines them. It is a per-customer choice about what to surface on the worker card.</p>
+      </div>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: worker card]</span>
+        <span class="ss-desc">A single worker card showing the KPIs — tenure, position, location, and the optional DEI KPIs (gender, generational distribution, race, ethnicity, performance rating).</span>
+      </div>
+
+      <h2>Start anywhere, go everywhere</h2>
+      <p>The workspace is built on a "start anywhere, go everywhere" idea: from links at the top you can drill into a <strong>job profile</strong> or a <strong>management org</strong>, and from there keep moving through the connected view of the organization.</p>
+
+      <h3>Job-level detail</h3>
+      <p>The job-profile page shows the detail for a job level:</p>
+      <ul>
+        <li>The job-level details.</li>
+        <li>Which orgs have this job.</li>
+        <li>The workers across the org who hold this job.</li>
+        <li>The <strong>required skills</strong>, the <strong>proficiency level</strong> for each, and whether it is a <strong>critical skill</strong>.</li>
+      </ul>
+
+      <img src="../img/screens/cpp-03-job-profile.jpg" alt="OWP Application (Golden Copy) Job Level profile for Sales Rep — Job Level Details (JL253, Associate, average fully-loaded cost), Organizations With This Job with filled/open/planned counts, Workers With This Job, the Job Skill Profile grid (Skill Required, Proficiency Level, Critical Skill), Job Critical Locations, and Compensation Ranges by Location" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">The Sales Rep job profile, including the Job Skill Profile with critical-skill flags.</p>
+
+      <h3>Drill to a worker</h3>
+      <p>From a job you can drill into an individual worker. For example, <strong>Dorothy</strong> in <strong>San Francisco</strong>: her start date, tenure, position, compensation breakout, <strong>compa-ratio</strong>, and — if it has been loaded — her performance rating.</p>
+
+      <h3>Pivot to an org</h3>
+      <p>You can also pivot to an org. For example, the <strong>AR (accounts-receivable) org</strong>: it might show three filled positions — one held by <strong>Nisha</strong>, a sales rep — along with the workers, their locations, and an <strong>org-chart</strong> widget. From the org view you can act directly: create a position or depart a worker.</p>
+
+      <img src="../img/screens/cpp-03-org-drill.jpg" alt="OWP Application (Golden Copy) Management Organization view for Accounts Receivable — Positions in this Org (Nisha Zhu, Sales Rep among others, all Filled), Workers in this Org, Jobs in this Org, a Continuous Forecast chart, Gender Distribution, a Position Locations map, and the Organizational Structure widget" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">The Accounts Receivable org view — Nisha Zhu among the filled positions.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-02-wfb-bridge.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-07-lab.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

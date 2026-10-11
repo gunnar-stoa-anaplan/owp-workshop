@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create &amp; Edit Positions — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Create &amp; Edit Positions</h1>
+      <p class="subtitle">Creating positions and fine-tuning fully-loaded cost</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Walkthrough</span>
+        <span class="content-badge">10 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Once budgeted positions have flowed into the Continuous Position Plan, the plan actions let HR, Finance, and workforce planners create and adjust positions directly in the CPP. This is where the plan stops being a static budget number and becomes a live, negotiation-aware view of what you are actually going to hire.</p>
+
+      <h2>Plan actions for positions</h2>
+      <p>The CPP groups position work under plan actions. For creating and editing positions you have three:</p>
+      <ul>
+        <li><strong>Create a position</strong> — add a single new position to an org.</li>
+        <li><strong>Create many positions</strong> — add several positions at once.</li>
+        <li><strong>Edit plan positions (bulk)</strong> — adjust existing plan positions in bulk rather than one at a time.</li>
+      </ul>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: Create-position plan action]</span>
+        <span class="ss-desc">The CPP plan actions with the create-a-position action open, showing the create/create-many/bulk-edit options.</span>
+      </div>
+
+      <h2>Worked example: fine-tuning fully-loaded cost</h2>
+      <p>Creating a position in the CPP lets you cost it more precisely than the budget side allows. Take a sales rep. Out of the box, the app assumes a fully-loaded cost of <strong>$78,000</strong>. In this scenario you want to reflect a real offer: a lower base plus an annual bonus.</p>
+      <p>Add a <strong>10% annual bonus</strong> and reduce the base by $5,000 — <em>"Adjust value… minus 5,000"</em> — taking base pay from $80,000 down to <strong>$75,000</strong>. The bonus then works out to roughly <strong>$7,300</strong>, and the position is created at about <strong>$80,000</strong> fully loaded instead of the $78,000 baseline.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Out-of-the-box fully-loaded assumption</td>
+              <td>$78,000</td>
+            </tr>
+            <tr>
+              <td>Base pay after "Adjust value… minus 5,000"</td>
+              <td>$75,000</td>
+            </tr>
+            <tr>
+              <td>Annual bonus (10%)</td>
+              <td>~$7,300</td>
+            </tr>
+            <tr>
+              <td>Position created at (fully loaded)</td>
+              <td>~$80,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Why this matters</span>
+        <p>The CPP allows more precise, negotiation-aware costing than the budget side. Rather than carrying a flat assumption, you can model the actual mix of base and bonus behind an offer, so the plan reflects what the position will really cost.</p>
+      </div>
+
+      <img src="../img/screens/cpp-04-edit-compensation.jpg" alt="OWP Application (Golden Copy) Create Position: Edit Compensation (Edit OTE) — New Position Details (Job Level Sales Rep, Job Grade Associate), Baseline Fully Loaded Cost 78,147, a 10% annual bonus of 7,815, Final Fully Loaded Cost 85,962, the Modify OTE Components grid, and a Base Pay / Annual Bonus / Total Cost comparison chart" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Edit OTE in the live app: a 10% annual bonus of 7,815 lifts the 78,147 baseline to 85,962. Exact figures vary by position — the point is the fine-tuning.</p>
+
+      <h2>Guardrails via dynamic text</h2>
+      <p>Instead of hard action errors, the CPP steers you with dynamic text. When something isn't allowed, the page tells you why in plain language rather than throwing a raw platform error. Verbatim examples:</p>
+      <ul>
+        <li><em>"you don't have write access"</em></li>
+        <li><em>"your time to hire is too short for creating a position"</em></li>
+      </ul>
+      <p>The reason for this approach is candid: <em>"error reporting in Anaplan is not super great."</em> Dynamic-text guardrails give the user a readable explanation instead of a cryptic failure.</p>
+
+      <h2>The edit queue</h2>
+      <p>A queue exists in editing plan and requested positions, so changes can be worked through in an orderly way. Note that there is <strong>no approval queue for creating positions</strong> — a queue would need someone to manage it, so requests are routed to the right person through <strong>Workflow</strong> instead. The queue you see here is specifically for editing plan and requested positions.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-07-lab.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-lab-positions.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

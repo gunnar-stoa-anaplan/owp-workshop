@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Create &amp; Cost a Position — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Create &amp; Cost a Position</h1>
+      <p class="subtitle">Create a position and fine-tune its fully-loaded cost</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Hands-On</span>
+        <span class="content-badge">20 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Confirm against your tenant</span>
+        <p>These steps follow what was shown in the workshop demo. Exact page names, button labels, and values vary by release and by your training tenant — treat the steps as a guide and confirm as you go. The <strong>Check my work</strong> button records your attempt; automated validation against Anaplan is not wired up yet.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Use <strong>Plan actions</strong> in your Continuous Position Plan (CPP) to <strong>create a Sales Rep position</strong></li>
+          <li>Open <strong>Edit Compensation (Edit OTE)</strong> and read the baseline fully-loaded cost</li>
+          <li><strong>Reduce base pay</strong> and add a <strong>10% annual bonus</strong> in the Modify OTE Components grid</li>
+          <li>Confirm the final fully-loaded cost using the <strong>78,147 &rarr; +7,815 &rarr; 85,962</strong> flow</li>
+          <li>See why the CPP is where you fine-tune cost, rather than the budget side</li>
+        </ul>
+      </div>
+
+      <h2>1 — Create a Sales Rep position</h2>
+      <p>Position creation lives under Plan actions in the CPP. Start a new Sales Rep position so you have something to cost.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, open the Continuous Position Plan (CPP) and go to Plan actions &rarr; Create Position.</strong></p>
+        <p>Pick the <strong>Sales Rep</strong> job when prompted, and set the org and start details your tenant asks for.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>From <strong>Plan actions</strong>, choose <strong>Create Position</strong> (the same menu also offers create many positions and edit plan positions in bulk).</li>
+        <li>Select the <strong>Sales Rep</strong> job and confirm the management org the position should sit in.</li>
+        <li>Note the out-of-the-box <strong>fully-loaded cost</strong> the app assumes for the position before you touch anything — in the demo this baseline is <strong>78,147</strong>.</li>
+        <li>Watch for <strong>guardrails via dynamic text</strong> rather than hard errors — messages like "you don't have write access" or "your time to hire is too short for creating a position."</li>
+      </ol>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 No approval queue for creating positions</span>
+        <p>There is no approval <em>queue</em> for creating positions — <strong>Workflow</strong> routes the request to the right person instead. A queue does exist when editing plan / requested positions.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>The number you fine-tune on this page is the position's <strong>fully-loaded cost</strong>. What does that figure represent?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-loaded-cost" value="A"><span class="lab-quiz-letter">A</span><span>Only the base salary the worker is offered</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-loaded-cost" value="B"><span class="lab-quiz-letter">B</span><span>The compa-ratio for the worker who eventually fills the role</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-loaded-cost" value="C"><span class="lab-quiz-letter">C</span><span>The total cost of the position — base pay plus other OTE components such as an annual bonus — as summed in the Modify OTE Components grid</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-loaded-cost" value="D"><span class="lab-quiz-letter">D</span><span>The budget-hierarchy level the position maps to</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> The fully-loaded cost is the total cost of the position — base pay plus the other OTE components you set in the Modify OTE Components grid, such as the 10% annual bonus. That is why adding the 7,815 bonus on top of the 78,147 baseline lands at a final 85,962.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. Fully-loaded means the total cost of the position — base pay <em>plus</em> the other OTE components (like the annual bonus) totalled in the grid. It is not just base salary, not the compa-ratio, and not a hierarchy level.</div>
+      </div>
+
+      <h2>2 — Edit Compensation: fine-tune the fully-loaded cost</h2>
+      <p>The CPP lets you refine the cost to reflect the real, negotiation-aware number instead of the coarser budget-side assumption. Open Edit Compensation and work the OTE components.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, on the new position choose Edit Compensation (Edit OTE).</strong></p>
+        <p>Find the <strong>Modify OTE Components</strong> grid and the <strong>Base Pay / Annual Bonus / Total Cost</strong> chart alongside it.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Open <strong>Edit Compensation (Edit OTE)</strong> and confirm the current <strong>baseline fully-loaded cost of 78,147</strong>.</li>
+        <li>In the <strong>Modify OTE Components</strong> grid, <strong>reduce base pay</strong> to reflect the negotiated offer.</li>
+        <li>Add a <strong>10% annual bonus</strong>. In the demo this resolves to <strong>7,815</strong> (10% of the 78,147 baseline).</li>
+        <li>Read the updated <strong>Total Cost</strong>: baseline <strong>78,147</strong> &rarr; add annual bonus <strong>+7,815</strong> &rarr; final fully-loaded cost <strong>85,962</strong>.</li>
+        <li>Watch the <strong>Base Pay / Annual Bonus / Total Cost</strong> chart redraw as you edit, then save the position at the confirmed cost.</li>
+      </ol>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: Create Position plan action]</span>
+        <span class="ss-desc">The CPP Plan actions menu open with the Create Position entry point highlighted — the starting point for creating the Sales Rep position, before Edit Compensation.</span>
+      </div>
+
+      <img src="../img/screens/cpp-04-edit-compensation.jpg" alt="OWP Create Position: Edit Compensation (Edit OTE) — baseline fully-loaded cost 78,147, a 10% annual bonus of 7,815, final 85,962, with the Modify OTE Components grid and Base Pay / Annual Bonus / Total Cost chart" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Edit Compensation (Edit OTE): the 78,147 baseline, a 10% annual bonus of 7,815, and the final 85,962 fully-loaded cost.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Tip</span>
+        <p>The cost can move up <em>or</em> down and is not locked once the position is created. The 7,815 bonus is derived from the 10% assumption against the baseline — it is not a flat figure you type in.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Why fine-tune a position's cost here in the <strong>CPP</strong> rather than on the <strong>budget (WFB)</strong> side?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-why-here" value="A"><span class="lab-quiz-letter">A</span><span>The budget side cannot store any compensation numbers at all</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-why-here" value="B"><span class="lab-quiz-letter">B</span><span>The CPP is the dynamic, day-to-day plan, so it allows more precise, negotiation-aware costing than the coarser budget-side assumption</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-why-here" value="C"><span class="lab-quiz-letter">C</span><span>Editing cost in the CPP deletes the budgeted position</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-why-here" value="D"><span class="lab-quiz-letter">D</span><span>Only the CPP can create a Sales Rep job</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> The CPP is the continuous, day-to-day view of the org, so it is the right place for precise, negotiation-aware costing — the budget side works at a coarser planning assumption. Refining base pay and adding the bonus here reflects the actual offer.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. You fine-tune here because the CPP is the dynamic, day-to-day plan and supports precise, negotiation-aware costing beyond the budget-side assumption. The budget side still holds numbers, editing here does not delete the budgeted position, and the job itself comes from the job framework.</div>
+      </div>
+
+      <div class="lab-check" data-check-id="create-and-cost-a-position" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've created the Sales Rep position, opened Edit Compensation, reduced base pay, added the 10% annual bonus, and confirmed the 85,962 fully-loaded cost, click below to verify.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">Position created and costed.</p>
+          <ul class="lab-check-list">
+            <li><strong>Sales Rep position created</strong> &rarr; started from Plan actions &rarr; Create Position, with org and start details set</li>
+            <li><strong>Baseline read</strong> &rarr; the out-of-the-box fully-loaded cost of 78,147 noted before editing</li>
+            <li><strong>Base pay reduced</strong> &rarr; adjusted in the Modify OTE Components grid to reflect the negotiated offer</li>
+            <li><strong>10% annual bonus added</strong> &rarr; resolves to 7,815 against the baseline</li>
+            <li><strong>Final cost confirmed</strong> &rarr; 78,147 + 7,815 = 85,962 fully-loaded, and the position saved at that cost</li>
+          </ul>
+          <p class="lab-check-next">Next up: transfer a position on a schedule.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You confirmed a fully-loaded cost of 85,962. Break the number down: what is the baseline, what did adding the 10% annual bonus contribute, and how did reducing base pay factor in?</li>
+        <li>A customer asks why they should cost the position in the CPP when they already budgeted it in WFB. How would you explain the difference between a budget-side assumption and CPP costing?</li>
+        <li>The app used dynamic text ("you don't have write access", "your time to hire is too short") instead of a hard error. Why is that the design choice, and how would you set expectations with a customer about it?</li>
+        <li>There is no approval queue for creating positions — Workflow routes the request instead. When would a customer expect a queue, and how would you position Workflow as the answer?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-04-positions.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-05-transfers.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

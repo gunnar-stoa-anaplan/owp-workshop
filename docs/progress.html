@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Progress — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>My Progress</h1>
+      <p class="subtitle">Your lab completion across the workshop</p>
+      <div class="badge-row">
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>This page tracks the hands-on labs you've completed. A lab is marked complete when you click its <strong>Check my work</strong> button. Work through the labs in any order — this updates as you go, and completed labs also show a ✓ in the sidebar.</p>
+
+      <div id="progress-root"></div>
+
+      <div style="margin:1.25rem 0;">
+        <button id="progress-reset" type="button" style="background:#fff;border:1px solid #cbd5e1;color:#475569;padding:0.5rem 0.9rem;border-radius:6px;font-weight:600;cursor:pointer;">Reset progress</button>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 How progress is stored</span>
+        <p>Your progress is saved <strong>in this browser only</strong> (local storage) — it isn't synced across devices or sign-ins, and clearing your browser data resets it. In a hosted deployment, this is where per-participant progress from the workshop backend would appear.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./00-overview.html">← Workshop Overview</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

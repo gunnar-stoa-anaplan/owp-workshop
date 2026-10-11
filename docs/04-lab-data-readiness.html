@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Data Readiness Assessment — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Data Readiness Assessment</h1>
+      <p class="subtitle">Decide whether Northwind is ready to start</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Decision</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>This is a decision lab. You're the delivery lead on the Northwind Global implementation. Northwind has handed over a picture of what data they have and what shape it's in. Your job is to decide whether they're ready to start configuration — and to be honest with them about what has to be clean first versus what can follow.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Open the Case Study</span>
+        <p>This lab reasons about <a href="./00-case-study.html">Northwind Global</a>. Keep the case-study page open — the data situation table below is drawn from it.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Read Northwind's data situation, object by object</li>
+          <li>Decide which OWP objects are <strong>mandatory to start</strong> and which are non-mandatory</li>
+          <li>Identify the one hard blocker that must be clean before load</li>
+          <li>Make a <strong>go / no-go</strong> call and name the workstream that goes with it</li>
+          <li>Check your reasoning against the inline Answer Key, then take the debrief questions to the group</li>
+        </ul>
+      </div>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: OWP data templates workbook]</span>
+        <span class="ss-desc">The OWP data templates Excel workbook with one tab per object (Position, Worker, Position&rarr;Worker link, Supervisory org, Job levels, etc.) and mandatory-field flags — the template set Northwind's readiness is assessed against.</span>
+      </div>
+
+      <h2>Northwind's data situation</h2>
+      <p>Here's what Northwind has for each OWP object. Work down the table and, for each one, form your own view: is it <strong>mandatory to start</strong>, and is it a <strong>blocker</strong> that has to be clean before you can load? Leave the verdict column as your own working notes — the Answer Key is further down.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>OWP object</th>
+              <th>Available at Northwind?</th>
+              <th>Notes</th>
+              <th>Your call: mandatory? blocker?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Position</strong></td><td>Yes — Workday</td><td>Dirty: zombie positions, some broken worker links.</td><td></td></tr>
+            <tr><td><strong>Employee / Worker</strong></td><td>Yes — Workday</td><td>Mostly clean; one duplicate.</td><td></td></tr>
+            <tr><td><strong>Position &rarr; Worker link</strong></td><td>Yes — Workday</td><td>Some broken (zombies, an employee with no position).</td><td></td></tr>
+            <tr><td><strong>Management (supervisory) org</strong></td><td>Yes — Workday</td><td>Exists; one worker missing a manager link.</td><td></td></tr>
+            <tr><td><strong>Job role / job level</strong></td><td>Yes — Workday job catalog</td><td>Foundational — bring in, don't create.</td><td></td></tr>
+            <tr><td><strong>Compensation</strong></td><td>Partial</td><td>Base pay for most; OTE / bonus incomplete.</td><td></td></tr>
+            <tr><td><strong>Skills</strong></td><td>Partial &amp; dirty</td><td>Free-text, inconsistent spelling.</td><td></td></tr>
+            <tr><td><strong>Attrition history</strong></td><td>Not readily available</td><td>—</td><td></td></tr>
+            <tr><td><strong>Budget hierarchy</strong></td><td>In Excel, unstructured</td><td>Needed for WFB.</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Run the assessment</h2>
+      <ol class="lab-steps">
+        <li><strong>Separate mandatory from non-mandatory.</strong> Which objects does the app need present to stand up at all? Think about what CPP and the supervisory-org rollup depend on.</li>
+        <li><strong>Find the hard blocker.</strong> Of the mandatory objects, which one is dirty enough that loading it as-is would break the app? What has to be clean before load?</li>
+        <li><strong>Decide what can follow.</strong> For each non-mandatory object, decide whether Northwind can start without it — and what capability stays incomplete until it lands.</li>
+        <li><strong>Make the call.</strong> Is this a go or a no-go to start configuration? If it's a go, what workstream runs alongside, and what do you tell Northwind about the trade-offs?</li>
+      </ol>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Which set of objects is <strong>mandatory to start</strong> configuration for Northwind?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-mandatory" value="A"><span class="lab-quiz-letter">A</span><span>Compensation, skills, and attrition history — the app needs full cost and matching data before anything else</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-mandatory" value="B"><span class="lab-quiz-letter">B</span><span>Only the budget hierarchy, because WFB drives the whole loop</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-mandatory" value="C"><span class="lab-quiz-letter">C</span><span>Positions, workers, the position&rarr;worker link, the supervisory org, and job levels</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-mandatory" value="D"><span class="lab-quiz-letter">D</span><span>Every object in the table — nothing can be deferred</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Positions, workers, the position&rarr;worker link, the supervisory org, and job levels are the mandatory backbone. Compensation, skills, and attrition are non-mandatory and can follow — the customer just needs to know matching and full-cost views stay incomplete until they land.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. The mandatory backbone is positions, workers, the position&rarr;worker link, the supervisory org, and job levels. Compensation, skills, and attrition are non-mandatory to start — you can fake comp for dev, matching is manual anyway, and attrition can be deferred.</div>
+      </div>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Northwind can't readily produce attrition history. Does that block the start?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-attrition" value="A"><span class="lab-quiz-letter">A</span><span>Yes — without attrition history the position plan can't be built, so it's a no-go</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-attrition" value="B"><span class="lab-quiz-letter">B</span><span>No — attrition is non-mandatory; note that it's missing and defer it</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-attrition" value="C"><span class="lab-quiz-letter">C</span><span>Yes — it's mandatory because the supervisory-org rollup needs it</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-readiness-attrition" value="D"><span class="lab-quiz-letter">D</span><span>No — but only if Northwind buys a separate attrition module first</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Attrition history is non-mandatory. Note that it's not available and defer it — it doesn't hold up the start. The real long pole is cleaning the position data and the position&rarr;worker link.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. Attrition is non-mandatory — you note it's missing and defer it. It isn't tied to the supervisory-org rollup, and it doesn't block a start. The hard blocker is dirty position data and the position&rarr;worker link.</div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Answer Key</span>
+        <p><strong>Per-object verdict:</strong></p>
+        <ul>
+          <li><strong>Position</strong> — mandatory; dirty and a blocker. Zombie positions and broken worker links must be cleaned before load.</li>
+          <li><strong>Employee / Worker</strong> — mandatory; mostly clean, one duplicate to reconcile.</li>
+          <li><strong>Position &rarr; Worker link</strong> — mandatory; the hard blocker. Broken links (zombies, an employee with no position) must be fixed before load.</li>
+          <li><strong>Management (supervisory) org</strong> — mandatory (half the app); ready, apart from one worker missing a manager link.</li>
+          <li><strong>Job role / job level</strong> — mandatory and ready; foundational — bring in from the Workday catalog, don't create new levels in OWP.</li>
+          <li><strong>Compensation</strong> — non-mandatory to start; base pay for most, OTE / bonus incomplete. Fake it for dev, load real comp later. Full-cost views stay incomplete until it lands.</li>
+          <li><strong>Skills</strong> — non-mandatory; free-text and dirty, but matching is manual anyway. Standardize later.</li>
+          <li><strong>Attrition history</strong> — non-mandatory; not readily available, so defer it.</li>
+          <li><strong>Budget hierarchy</strong> — needed for WFB but unstructured. Start with a dummy 5-level hierarchy and refine.</li>
+        </ul>
+        <p><strong>Go / no-go: GO to start configuration</strong>, with a <strong>data-cleanup workstream on positions</strong> (close zombies, fix broken worker / manager links) as the long pole. Management org, workers, and job levels are ready. Compensation, skills, and attrition are non-mandatory and can follow — but be explicit with Northwind that until they land, the matching and full-cost views won't be complete. The one hard blocker to clean before load: <strong>clean position data and a clean position&rarr;worker link.</strong></p>
+      </div>
+
+      <div class="lab-check" data-check-id="owp-lab-data-readiness" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've worked through every object and made your go / no-go call, click below to verify your assessment is complete.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">A complete Data Readiness assessment for Northwind covers:</p>
+          <ul class="lab-check-list">
+            <li><strong>Per-object verdicts recorded</strong> &rarr; mandatory-vs-non-mandatory and blocker-or-not noted for every object in the data-situation table</li>
+            <li><strong>The hard blocker identified</strong> &rarr; dirty position data and the position&rarr;worker link flagged as must-be-clean-before-load</li>
+            <li><strong>Deferrable items named</strong> &rarr; compensation, skills, and attrition marked non-mandatory, with the capability that stays incomplete until each lands</li>
+            <li><strong>Go / no-go stated</strong> &rarr; a clear GO to start configuration, with the parallel data-cleanup workstream on positions called out</li>
+          </ul>
+          <p class="lab-check-next">Ready for the debrief questions — compare your reasoning against the Answer Key above.</p>
+        </div>
+      </div>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You called this a go, not a no-go. A skeptical Northwind sponsor asks, "If our position data is dirty, why aren't we waiting until it's clean?" How do you explain starting configuration and cleaning positions in parallel?</li>
+        <li>Compensation is only partial (base pay yes, OTE / bonus no). What exactly can Northwind not see or do until full comp lands, and how do you set that expectation up front?</li>
+        <li>Skills are dirty free-text. Why is that non-mandatory to start, and what changes about your advice if Northwind wanted automated skills matching on day one?</li>
+        <li>The budget hierarchy lives in an unstructured spreadsheet. What does starting with a dummy 5-level hierarchy buy you, and what's the risk if you skip WFB entirely to start?</li>
+        <li>Name the single hard blocker in one sentence. Why is the position&rarr;worker link the thing you refuse to load dirty, when a missing manager link or a duplicate worker you'd fix but not block on?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./04-data-templates.html">← Previous</a>
+        <a class="prevnext-btn" href="./04-lab-template-mapping.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

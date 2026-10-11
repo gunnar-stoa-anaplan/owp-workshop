@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selective Access — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Selective Access</h1>
+      <p class="subtitle">Flat lists that cascade to orgs and positions</p>
+      <div class="badge-row">
+        <span class="content-badge">Security</span>
+        <span class="content-badge">Walkthrough</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Selective access is what decides which slice of the organization a user actually sees and can work on. In OWP 2.1 it is managed from a dedicated hub in the UX, and its defining trick is the cascade: you grant access at one point in a flat list and it flows down to every org and position underneath. For a large customer that cascade is the whole point.</p>
+
+      <h2>The security management hub</h2>
+      <p>Selective access is managed from a <strong>security management hub</strong> in the UX (2.1). You start by selecting a user — the demo used examples like <strong>Alex, Mariah, and Anna</strong> — and then grant them access from there.</p>
+
+      <img src="../img/screens/sec-02-selective-access.jpg" alt="OWP Application (Golden Copy) Manage Security: Budget Hierarchy Selective Access — Security Management with a model user selected, Apply Top Level Access, the Level 1 / Level 2 / Level 3 access grids (Current / Read / Write / None per org), the Budget Hierarchy Legend (Initial, Inherited, Remove, Edit, No Access), and the Update BH Access action" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Manage Security: Budget Hierarchy Selective Access — access cascading across hierarchy levels.</p>
+
+      <h2>Grant write access to an org — and watch it cascade</h2>
+      <p>With a user selected, you grant them <strong>write access</strong> to an org — for example <strong>"global sales."</strong> Even though the management-org list is kept <strong>flat</strong>, the grant does not stop at that one org. It <strong>automatically cascades</strong>:</p>
+
+      <ul>
+        <li>Down to all the <strong>underlying management orgs</strong> beneath the one you picked.</li>
+        <li>Out to all the <strong>positions aligned to those orgs.</strong></li>
+      </ul>
+
+      <div class="screenshot-placeholder">
+        <div class="ss-icon">📸</div>
+        <div class="ss-label">[SCREENSHOT NEEDED: Granting write access to an org]</div>
+        <div class="ss-desc">Granting a selected user write access to "global sales" from the flat management-org list.</div>
+      </div>
+
+      <div class="screenshot-placeholder">
+        <div class="ss-icon">📸</div>
+        <div class="ss-label">[SCREENSHOT NEEDED: Cascade result]</div>
+        <div class="ss-desc">The result view showing access flowed down to underlying management orgs and their aligned positions.</div>
+      </div>
+
+      <p>The same works from the <strong>budget-hierarchy (BH) side.</strong> Grant access against everything under <strong>"Operations,"</strong> and it cascades to all the cost centers underneath plus the budget positions there.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Flat to hierarchical, automatically</span>
+        <p>The list you grant against is flat, but 2.1 rebuilds the hierarchy in the back end and cascades your grant through it. You set access at one node and the app fills in everything below — no clicking through each child org.</p>
+      </div>
+
+      <h2>Why the cascade matters</h2>
+      <p>Doing this by hand would be a <em>"nightmare"</em> for a 40–50k-person org. Assigning each user to every org and position individually simply does not scale. The cascade is what makes selective access workable at enterprise size — one grant, entire branch covered.</p>
+
+      <h2>Selective access governs everything a user sees</h2>
+      <p>This is not just about edit rights. Selective access <strong>governs everything a user sees</strong> — the drop-downs available to them, the positions in their views, and the targets they can pick when transferring workers or positions. Get selective access right and the rest of the experience narrows to the right scope on its own.</p>
+
+      <h2>Managing users through the UX</h2>
+      <p>The hub also manages users after they are added. All from the UX, you can:</p>
+      <ul>
+        <li>Change a user's <strong>model role.</strong></li>
+        <li><strong>Review and update</strong> their access.</li>
+      </ul>
+      <p>Every change is made in the UX and <strong>writes back to the model</strong> immediately — no separate admin step in the modeling environment.</p>
+
+      <h2>Copying access between users</h2>
+      <p>There is <strong>no dedicated "copy from user to user" button</strong>, but you can still copy access without rebuilding it. Copy and paste the <strong>access rows</strong> onto another user and push them to the models. It works across all models.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Pending SME Input</span>
+        <p>[PENDING SME input] <em>On ALM and upgrades, an upgrade "shouldn't" overwrite selective-access changes — builders don't modify selective access, so only a change on Anaplan's end would overwrite it. The precise nuance about where security is implemented (dev vs. UAT, ALM to UAT) was logged as an open question to the internal product framework team and was not resolved on the recordings.</em></p>
+      </div>
+
+      <h2>Job levels are foundational</h2>
+      <p>One structural boundary to know before you configure access: <strong>you cannot create new job levels in OWP.</strong> The job-level framework is foundational. Job levels are created in <strong>Workday / HCM</strong> and brought into OWP — not built inside the app. Plan for that when a customer expects to define new levels during the OWP project.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./sec-01-roles.html">← Previous</a>
+        <a class="prevnext-btn" href="./sec-03-lab.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

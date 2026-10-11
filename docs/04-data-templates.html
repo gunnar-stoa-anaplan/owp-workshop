@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Templates &amp; Readiness — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Data Templates &amp; Readiness</h1>
+      <p class="subtitle">Templates, mandatory fields, and dirty data</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Method · 3</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Configuration is data-driven, so the templates are the backbone of the whole engagement. They tell the customer exactly what data the app expects, in what shape, and what is required versus optional. Getting them into the customer's hands early — and getting clean data back — is the single biggest lever on your timeline.</p>
+
+      <h2>What the templates are</h2>
+      <p>The templates are an <strong>Excel file with multiple tabs</strong>, one per object — a position file, an employee file, and so on. Each tab and field is flagged <strong>mandatory Y/N</strong>. The customer matches their data to it and reports back what they have and what they don't.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Shared before kickoff</span>
+        <p>The templates, the <strong>solution guide</strong>, and the documentation are given to the customer <strong>during the sales cycle / when the deal is signed</strong> — before kickoff. Aim for one or two template review meetings before kickoff.</p>
+      </div>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 It's an import action, not a "load rule"</span>
+        <p>Data is loaded via the app's <strong>import action</strong>. (The presenter corrected himself here — it's not a "load rule.")</p>
+      </div>
+
+      <h2>Mandatory vs. non-mandatory data</h2>
+      <p>You do <strong>not</strong> need 100% of the data to start. Some fields are required because app nodes and processes depend on them; others can come later.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Data</th><th>Needed to start?</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clean position data</td>
+              <td><strong>Yes</strong></td>
+              <td>Hard to start without it.</td>
+            </tr>
+            <tr>
+              <td>Clean position → employee link</td>
+              <td><strong>Yes</strong></td>
+              <td>Also needed to start.</td>
+            </tr>
+            <tr>
+              <td>Attrition</td>
+              <td>No</td>
+              <td>Missing attrition is OK — move on.</td>
+            </tr>
+            <tr>
+              <td>Detailed compensation</td>
+              <td>No</td>
+              <td>Can come later using a compensation account.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Start with dummy structure</h2>
+      <p>You don't need the final hierarchy shape at the outset. The built-in <strong>5-level budget hierarchy</strong> can use dummy levels to get going; you remove the useless levels later, in the extension phase.</p>
+
+      <h2>The hierarchies that build the app</h2>
+      <p>Two to three hierarchies drive the whole app:</p>
+      <ul>
+        <li>A <strong>planning hierarchy for budget</strong></li>
+        <li>A <strong>planning hierarchy</strong></li>
+        <li>The <strong>job-role hierarchy</strong></li>
+      </ul>
+      <p>These are often started at 3–4 (or 5) levels. Reconciling the customer's granularity to the template is the key configuration discussion.</p>
+
+      <h2>Config workshop cadence</h2>
+      <p>Configuration workshops run roughly <strong>every two days</strong>, with separate workshops for data, the budget process, and the project process. Run them with the <strong>data-management team, the HR BP, and Finance</strong> — Finance cares about granularity because it determines how the finance app connects.</p>
+
+      <h2>Dirty HR data</h2>
+      <p>HR data from <strong>Workday</strong> and <strong>SuccessFactors</strong> is "very dirty." Loading it into the app's structure surfaces red flags and gives the customer an opportunity to clean up. As one participant put it, "getting the data is the hardest part."</p>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Watch for zombie positions</span>
+        <p>A classic gotcha is <strong>"zombie positions"</strong> — positions created years ago, never filled, doing nothing. They sit quietly in the HR system until you load the data into structure, where they show up as red flags. Treat surfacing them as a clean-up opportunity, not a data-load failure.</p>
+      </div>
+
+      <h2>Dev-data best practice</h2>
+      <p>Don't develop against full production data. "Start with a small data set, then increase it as you go into different environments" — the same guidance applies for <strong>Polaris</strong>.</p>
+      <div class="callout-tip">
+        <span class="callout-label">💡 Fake the comp early</span>
+        <p>"For compensation numbers, just make everyone $100,000, or $10,000." Accuracy doesn't matter early — "we need to get the math to work" first. Load real production data once the calculations are proven.</p>
+      </div>
+
+      <div class="callout-do">
+        <span class="callout-label">✅ You can't build workforce planning without the data</span>
+        <p>A customer who wants workforce planning must eventually provide position, employee, location, and job-role data. Identify what they can and can't provide in the pre-project phase — some app functionality simply won't work until the data is there.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./03-delivery-lifecycle.html">← Previous</a>
+        <a class="prevnext-btn" href="./04-lab-data-readiness.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

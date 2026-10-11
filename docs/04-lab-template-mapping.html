@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Map the HR Extract — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Map the HR Extract</h1>
+      <p class="subtitle">Map a messy Workday export to the OWP templates</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Decision</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>This is a decision lab. Northwind Global has handed you a representative Workday export — the kind of file you get on a real engagement. It has the data you need, but it's messy. Your job is to map each column to the right OWP template, find the deliberate problems, and decide which ones must be fixed before load versus which can wait.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Open the Case Study</span>
+        <p>This lab reasons about <a href="./00-case-study.html">Northwind Global</a>. The job codes, orgs, and locations in the extract come from the case study — keep it open.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Map each column in the extract to an OWP template tab</li>
+          <li>Find the data problems — the file has several deliberate ones</li>
+          <li>Sort the problems into <strong>mandatory to fix before load</strong> vs. <strong>defer</strong></li>
+          <li>Check your work against the inline Answer Key, then take the debrief questions to the group</li>
+        </ul>
+      </div>
+
+      <h2>The extract</h2>
+      <p>Here are the rows Northwind handed over. Work through them and note anything that looks wrong — there's no "issue" column to lean on; finding the problems is the exercise.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Emp ID</th>
+              <th>Worker Name</th>
+              <th>Position ID</th>
+              <th>Position Title</th>
+              <th>Mgr ID</th>
+              <th>Supervisory Org</th>
+              <th>Location</th>
+              <th>Job Code</th>
+              <th>Base Pay</th>
+              <th>Skills (free text)</th>
+              <th>Hire Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>E1001</td><td>Dana Whitfield</td><td>P50012</td><td>Senior Account Executive</td><td>E1000</td><td>EMEA Enterprise Sales</td><td>London</td><td>SLS-AE-SR</td><td>118000</td><td>Enterprise Sales; Negotiation</td><td>2021-03-15</td><td>Filled</td></tr>
+            <tr><td>E1002</td><td>Marco Reyes</td><td>P50018</td><td>Solutions Engineer</td><td>E1000</td><td>EMEA Enterprise Sales</td><td>LON</td><td>ENG-SE</td><td>104000</td><td>Presales; Solutioning</td><td>2022-06-01</td><td>Filled</td></tr>
+            <tr><td>E1003</td><td>Priya Nair</td><td>P50021</td><td>Sr. AE</td><td>E1000</td><td>EMEA Enterprise Sales</td><td>London, UK</td><td>SLS-AE-SR</td><td><em>(blank)</em></td><td>Enterprise Sales; account planning</td><td>2020-11-02</td><td>Filled</td></tr>
+            <tr><td>—</td><td><em>(blank)</em></td><td>P40007</td><td>Customer Success Manager</td><td>E2000</td><td>NA Customer Success</td><td>Boston</td><td>CS-CSM</td><td><em>(blank)</em></td><td><em>(blank)</em></td><td><em>(blank, "created 2019")</em></td><td>Unfilled</td></tr>
+            <tr><td>E1005</td><td>Tomás Ferreira</td><td>P50033</td><td>Financial Analyst</td><td><em>(blank)</em></td><td>NA Finance</td><td>Boston</td><td>FIN-ANL</td><td>92000</td><td>Financial Planningg; Excel</td><td>2023-01-09</td><td>Filled</td></tr>
+            <tr><td>E1006</td><td>Aiko Tanaka</td><td>P60002</td><td>Senior Software Engineer</td><td>E3000</td><td>APAC Engineering</td><td>Singapore</td><td>ENG-SW-SR</td><td>132000</td><td>Java; Distributed Systems</td><td>2019-08-20</td><td>Filled</td></tr>
+            <tr><td>E1007</td><td>Sarah Klein</td><td>P50040</td><td>Regional Sales Director</td><td>E0500</td><td>Global Sales</td><td>Boston</td><td>SLS-MGR</td><td>176000</td><td>Leadership; Forecasting</td><td>2018-04-11</td><td>Filled</td></tr>
+            <tr><td>E1003</td><td>Priya Nair</td><td>P50021</td><td>Senior Account Executive</td><td>E1000</td><td>EMEA Enterprise Sales</td><td>London</td><td>SLS-AE-SR</td><td>121000</td><td>Enterprise Sales</td><td>2020-11-02</td><td>Filled</td></tr>
+            <tr><td>E1009</td><td>Ben Osei</td><td><em>(blank)</em></td><td>Counsel</td><td>E4000</td><td>Legal</td><td>Boston</td><td>LGL-CNS</td><td>145000</td><td>Contracts; Compliance</td><td>2021-09-30</td><td>Filled</td></tr>
+            <tr><td>E1010</td><td>Lena Vogt</td><td>P50051</td><td>Account Executive</td><td>E0500</td><td>EMEA Enterprise Sales</td><td>Munich</td><td>SLS-AE</td><td>98000</td><td>fin. planning; prospecting</td><td>2022-02-14</td><td>Filled</td></tr>
+            <tr><td>—</td><td><em>(blank)</em></td><td>P70003</td><td>Pre-Sales Engineer</td><td>E3000</td><td>APAC Engineering</td><td>Singapore</td><td>ENG-SE</td><td><em>(blank)</em></td><td><em>(blank)</em></td><td><em>(blank, "created 2020")</em></td><td>Unfilled</td></tr>
+            <tr><td>E1013</td><td>Grace Lim</td><td>P60015</td><td>Software Engineer</td><td>E3000</td><td>APAC Engineering</td><td>Singapore</td><td>ENG-SW</td><td>108000</td><td>Python; planning</td><td>2023-05-22</td><td>Filled</td></tr>
+            <tr><td>E1014</td><td>Owen Brady</td><td>P50060</td><td>Sr Account Exec</td><td>E1000</td><td>EMEA Enterprise Sales</td><td>Dublin</td><td>SLS-AE-SR</td><td>119000</td><td>Enterprise Sales; Negotiation</td><td>2021-07-19</td><td>Filled</td></tr>
+            <tr><td>E1015</td><td>Nadia Haddad</td><td>P40011</td><td>Customer Success Manager</td><td>E2000</td><td>NA Customer Success</td><td>Boston</td><td>CS-CSM</td><td>96000</td><td>Onboarding; Renewals</td><td>2022-10-03</td><td>Filled</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: OWP position &amp; employee template tabs]</span>
+        <span class="ss-desc">The target OWP template workbook open to the Position and Employee / Worker tabs, showing the columns each extract field maps into (Position ID, Position Title, Job Code, Supervisory Org, Emp ID, Worker Name, Base Pay, etc.).</span>
+      </div>
+
+      <h2>Your tasks</h2>
+      <ol class="lab-steps">
+        <li><strong>Map each column to a template tab.</strong> Work across the header row and decide which OWP template each column belongs to — Employee / Worker, Position, Management (supervisory) org, or Job / job level.</li>
+        <li><strong>Find the data problems.</strong> Read down the rows and list everything wrong: dead positions, missing links, duplicates, a worker with no position, and the dirty free-text columns.</li>
+        <li><strong>Mark mandatory-to-fix vs. defer.</strong> For each problem, decide whether it must be fixed before load or whether it's hygiene you can clean up later.</li>
+      </ol>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Which OWP template tab does the <strong>Supervisory Org</strong> column map to?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-suporg" value="A"><span class="lab-quiz-letter">A</span><span>The Employee / Worker tab, next to Worker Name</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-suporg" value="B"><span class="lab-quiz-letter">B</span><span>The Management (supervisory) org — together with Mgr ID it drives the org hierarchy</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-suporg" value="C"><span class="lab-quiz-letter">C</span><span>The Job / job level tab, because org and job level are the same thing</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-suporg" value="D"><span class="lab-quiz-letter">D</span><span>It isn't mapped — supervisory org is derived automatically in OWP</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Supervisory Org maps to the Management (supervisory) org, and together with Mgr ID it drives the org hierarchy — the rollup that's half the app. That's also why the missing Mgr ID on E1005 matters.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. Supervisory Org maps to the Management (supervisory) org template, and with Mgr ID it drives the org hierarchy. It isn't a worker attribute, it isn't the job level, and it isn't auto-derived — you load it.</div>
+      </div>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Ben Osei (E1009) has a name, a job code, and pay — but no Position ID. Is that OK to load?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-noposition" value="A"><span class="lab-quiz-letter">A</span><span>Yes — OWP will create a position automatically from the job code</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-noposition" value="B"><span class="lab-quiz-letter">B</span><span>Yes — a worker without a position is fine; it's just a hygiene issue to clean later</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-noposition" value="C"><span class="lab-quiz-letter">C</span><span>No — OWP plans by position, so assign a Position ID or exclude him before load</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-mapping-noposition" value="D"><span class="lab-quiz-letter">D</span><span>No — but only because his skills are missing, not the Position ID</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> OWP plans by position. A worker with no Position ID has nothing to attach to, so it's mandatory to fix before load — assign a Position ID or exclude him. It's not auto-created, and it's not a defer-until-later hygiene item.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. OWP plans by position, so a worker with no Position ID can't be planned — you assign a Position ID or exclude him before load. OWP doesn't invent a position from the job code, and this isn't a defer-it hygiene issue.</div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Answer Key</span>
+        <p><strong>Column &rarr; template mapping:</strong></p>
+        <ul>
+          <li><strong>Employee / Worker tab:</strong> Emp ID, Worker Name, Hire Date, Location, Base Pay, Skills; Mgr ID as the manager reference.</li>
+          <li><strong>Position tab:</strong> Position ID, Position Title, Job Code, Supervisory Org, Status; the Employee&harr;Position link ties a worker to a position.</li>
+          <li><strong>Management (supervisory) org:</strong> Supervisory Org + Mgr ID drive the org hierarchy.</li>
+          <li><strong>Job / job level:</strong> Job Code &rarr; foundational, sourced from the Workday job catalog — <strong>do not create job levels in OWP.</strong></li>
+        </ul>
+        <p><strong>Mandatory to start:</strong> Position ID, the Employee&harr;Position link, Supervisory Org, Job Code.</p>
+        <p><strong>The problems in the file:</strong></p>
+        <ul>
+          <li><strong>Zombie positions</strong> — P40007 (and confirm P70003): unfilled, never filled, no worker or hire date.</li>
+          <li><strong>Missing manager link</strong> — E1005 (Tomás Ferreira) has a blank Mgr ID.</li>
+          <li><strong>Duplicate worker</strong> — E1003 (Priya Nair) appears twice with conflicting base pay and title.</li>
+          <li><strong>Worker with no position</strong> — E1009 (Ben Osei) has no Position ID.</li>
+          <li><strong>Dirty skills</strong> — "Financial Planningg" (typo), "fin. planning", "planning" — inconsistent free text.</li>
+          <li><strong>Dirty locations</strong> — "LON", "London, UK" vs. "London".</li>
+          <li><strong>Dirty titles</strong> — "Sr. AE", "Sr Account Exec" vs. the job-code label.</li>
+        </ul>
+        <p><strong>Must fix before load (the mandatory ones):</strong></p>
+        <ol>
+          <li><strong>Zombie positions</strong> P40007 (and confirm P70003) — close / exclude; don't load dead positions.</li>
+          <li><strong>Missing manager link</strong> on E1005 — breaks the supervisory-org rollup; fix in Workday.</li>
+          <li><strong>Duplicate worker</strong> E1003 (two rows) — dedupe and reconcile the conflicting base pay / title.</li>
+          <li><strong>Employee with no position</strong> — Ben Osei (E1009) — OWP plans by position; assign a Position ID or exclude.</li>
+        </ol>
+        <p><strong>Defer (non-mandatory to start):</strong></p>
+        <ul>
+          <li>Standardize <strong>skills</strong> ("Financial Planningg" / "fin. planning" / "planning" &rarr; one value) — matching is manual anyway.</li>
+          <li>Fill <strong>missing base pay</strong> — fake it for dev, load real comp later.</li>
+          <li><strong>Attrition</strong> — not in this extract at all; note it's missing but it's OK to defer.</li>
+          <li>Standardize <strong>locations</strong> ("LON" / "London, UK" &rarr; "London") and <strong>titles</strong> to the job-code label — good hygiene, not a blocker.</li>
+        </ul>
+      </div>
+
+      <div class="lab-check" data-check-id="owp-lab-template-mapping" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've mapped every column, found the problems, and split them into must-fix vs. defer, click below to verify your mapping is complete.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">A complete extract-mapping submission for Northwind covers:</p>
+          <ul class="lab-check-list">
+            <li><strong>Every column mapped to a tab</strong> &rarr; each extract field assigned to Employee / Worker, Position, Management (supervisory) org, or Job / job level</li>
+            <li><strong>All data problems found</strong> &rarr; zombie positions, missing manager link, duplicate worker, worker with no position, and the dirty skills / locations / titles</li>
+            <li><strong>Mandatory-vs-defer split done</strong> &rarr; the four must-fix-before-load problems separated from the hygiene items that can wait</li>
+            <li><strong>Job levels handled correctly</strong> &rarr; Job Code sourced from the Workday catalog, not created new in OWP</li>
+          </ul>
+          <p class="lab-check-next">Ready for the debrief questions — compare your mapping against the Answer Key above.</p>
+        </div>
+      </div>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You separated four must-fix problems from the defer pile. What's the common thread in the must-fix four, and why does dirty skills or a "LON" location not make that list?</li>
+        <li>The duplicate Priya Nair rows conflict on base pay and title. How would you reconcile them, and who at Northwind do you go to for the tie-breaker?</li>
+        <li>P40007 is a clear zombie; P70003 is "likely" a zombie. What makes you confident about one and not the other, and how do you confirm before excluding it?</li>
+        <li>Ben Osei has no Position ID. Walk through the two options — assign a position vs. exclude — and when you'd choose each.</li>
+        <li>Everything in the defer pile is real dirt you're choosing not to fix yet. How do you keep that debt visible so it actually gets cleaned up later instead of quietly shipping to production?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./04-lab-data-readiness.html">← Previous</a>
+        <a class="prevnext-btn" href="./05-extensions-vs-core.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Skills Matching — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Skills Matching</h1>
+      <p class="subtitle">Find internal candidates by skill</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Hands-On</span>
+        <span class="content-badge">15 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Confirm against your tenant</span>
+        <p>These steps follow what was shown in the workshop demo. Exact page names, button labels, and values vary by release and by your training tenant — treat the steps as a guide and confirm as you go. The <strong>Check my work</strong> button records your attempt; automated validation against Anaplan is not wired up yet.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Open <strong>Worker Skill Search</strong> in your Golden Copy training tenant</li>
+          <li>Pick a <strong>skill category</strong> and mark the <strong>required / critical</strong> skills you're matching on</li>
+          <li>Tune the <strong>% match threshold</strong> — start at <strong>75%</strong>, then <strong>50%</strong>, then <strong>25%</strong> — and watch how the results change</li>
+          <li>Review the <strong>Worker / Position / Job</strong> results with their match percentages</li>
+          <li>Shortlist an internal candidate and drill in to check role, tenure, and performance</li>
+        </ul>
+      </div>
+
+      <h2>Exercise Overview</h2>
+      <p>Skills matching helps you find internal candidates for a role by comparing worker skills against the skills a job needs. In this lab you'll search on a set of skills — for example accounts payable, financial analysis, financial modeling, and planning — and use the match threshold to widen or narrow the field. You'll see why a high threshold can return too few people, and why the data behind matching needs a careful eye.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 How to use this lab</span>
+        <p>Change one thing at a time. Lower the <strong>% match threshold</strong> in steps and re-read the results before you touch anything else — the whole point of the lab is to feel how the threshold trades precision for reach. Then drill into a promising worker to confirm role, tenure, and performance before you shortlist them.</p>
+      </div>
+
+      <hr>
+
+      <h2>Guided Steps — Search by Skill</h2>
+
+      <blockquote>
+        <p><strong>Navigate to the CPP and open Worker Skill Search.</strong></p>
+        <p>Skills matching is a manual process out of the box, so you drive the search: choose the category, mark the skills that matter, and set the threshold yourself.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Open <strong>Worker Skill Search</strong> and pick a <strong>skill category</strong>.</li>
+        <li>Mark the <strong>required</strong> and <strong>critical</strong> skills you're matching on — for example accounts payable, financial analysis, financial modeling, and planning.</li>
+        <li>Set the <strong>% match threshold</strong> to <strong>75%</strong> and read the results. At this level the bar is often too high and you'll get very few workers back.</li>
+        <li>Lower the threshold to <strong>50%</strong> and re-read the results — more workers qualify.</li>
+        <li>Lower it again to <strong>25%</strong>. In the worked example this returns the best working set of candidates to review.</li>
+        <li>Review the <strong>Worker / Position / Job</strong> results and their match percentages. Drill to a candidate — for example <strong>Jennifer Hills</strong> — to check role, tenure, and performance.</li>
+        <li>Shortlist an internal candidate that fits the role.</li>
+      </ol>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: skill search results at the 25% threshold]</span>
+        <span class="ss-desc">The Worker / Position / Job results list after lowering the % match threshold to 25%, with a drill-in on a candidate (e.g. Jennifer Hills) showing role, tenure, and performance.</span>
+      </div>
+
+      <img src="../img/screens/cpp-06-skill-search.jpg" alt="OWP Worker Skill Search — skill category, required/critical skill toggles, a % match threshold, and Worker / Position / Job results with match percentages" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Worker Skill Search — skill category, required/critical skill toggles, the % match threshold, and Worker / Position / Job results with match percentages.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Confirm against your tenant</span>
+        <p>A job such as <strong>General Counsel</strong> with <strong>regulatory compliance</strong> flagged as a <em>critical</em> skill is used to illustrate a future <strong>weighting module</strong> — where a critical or expert skill would count for more than a plain required skill. That weighting is roadmap and under Anaplan's safe-harbor caveat; today, matching treats skills without that extra weighting.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>You start at a <strong>75%</strong> match threshold and get almost no workers back. Why lower it to <strong>50%</strong> and then <strong>25%</strong>?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-threshold" value="A"><span class="lab-quiz-letter">A</span><span>A lower threshold makes each worker's skills more accurate</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-threshold" value="B"><span class="lab-quiz-letter">B</span><span>A lower threshold widens the field so more workers qualify, giving you a usable set of candidates to review</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-threshold" value="C"><span class="lab-quiz-letter">C</span><span>A lower threshold automatically shortlists the best candidate for you</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-threshold" value="D"><span class="lab-quiz-letter">D</span><span>A lower threshold turns on the weighting module</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> The threshold sets how close a worker's skills must be to the job's skills. At 75% the bar is often too high and few people clear it; dropping to 50% and then 25% widens the field so you have a real set of candidates to review. In the worked example, 25% gave the best working set.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. Lowering the threshold doesn't clean the data, shortlist for you, or enable weighting — it simply relaxes how close the match must be, so more workers qualify and you get a usable candidate set.</div>
+      </div>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>A worker who clearly has planning experience isn't matching. What's the most likely cause, given how skills matching works out of the box?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-dirty-data" value="A"><span class="lab-quiz-letter">A</span><span>The Optimizer hasn't been run for that org yet</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-dirty-data" value="B"><span class="lab-quiz-letter">B</span><span>Selective access is hiding the worker from every search</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-dirty-data" value="C"><span class="lab-quiz-letter">C</span><span>Skills data is dirty — the skill may be spelled inconsistently (e.g. "planning" with four n's), and matching is manual out of the box</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-skill-dirty-data" value="D"><span class="lab-quiz-letter">D</span><span>The match threshold can't go below 25%</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Skills data is notoriously dirty — people spell "planning" with four n's, and the same skill shows up under different labels. Because matching is a manual process out of the box, an inconsistently spelled skill simply won't match, so you review and clean the underlying data rather than trusting the results blindly.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. Matching is manual out of the box and skills data is dirty — inconsistent spellings and labels break the match. The Optimizer, selective access, and the threshold floor aren't what's dropping a genuinely skilled worker here.</div>
+      </div>
+
+      <div class="lab-check" data-check-id="owp-cpp-skills-matching" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've run a skill search, tuned the threshold from 75% down to 25%, reviewed the results, and shortlisted a candidate, click below to record your attempt.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">Skill search run and candidate shortlisted.</p>
+          <ul class="lab-check-list">
+            <li><strong>Worker Skill Search opened</strong> &rarr; skill category selected</li>
+            <li><strong>Required / critical skills marked</strong> &rarr; the skills you're matching on chosen</li>
+            <li><strong>Threshold tuned 75% → 50% → 25%</strong> &rarr; results re-read at each level</li>
+            <li><strong>Worker / Position / Job results reviewed</strong> &rarr; match percentages inspected</li>
+            <li><strong>Candidate drilled and shortlisted</strong> &rarr; role, tenure, and performance checked (e.g. Jennifer Hills)</li>
+          </ul>
+          <p class="lab-check-next">Next: Org Modeling — scenario org changes, RIF, and hiring freeze.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>At 25% the results were the most useful, but a 25% match is a loose fit. How would you talent-review that list rather than treating the top match percentage as the answer?</li>
+        <li>Skills data is dirty and matching is manual out of the box. What would you put in front of a customer as the data-cleanup work needed before they rely on skills matching?</li>
+        <li>The General Counsel example flags regulatory compliance as a critical skill to motivate a future weighting module. How would weighting critical or expert skills change the candidate list you built here — and how would you caveat that as roadmap?</li>
+        <li>You shortlisted an internal candidate. How does this feed a worker transfer — and what does it tell you about OWP as a foundation for finding talent you already have?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-06-skills-matching.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-08-org-modeling.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

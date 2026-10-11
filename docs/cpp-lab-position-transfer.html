@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Transfer a Position — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Transfer a Position</h1>
+      <p class="subtitle">Move a position to a new org on a schedule</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Hands-On</span>
+        <span class="content-badge">15 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Confirm against your tenant</span>
+        <p>These steps follow what was shown in the workshop demo. Exact page names, button labels, and values vary by release and by your training tenant — treat the steps as a guide and confirm as you go. The <strong>Check my work</strong> button records your attempt; automated validation against Anaplan is not wired up yet.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Open <strong>Position Transfer</strong> for <strong>Benjamin Rose</strong> in your Continuous Position Plan (CPP)</li>
+          <li>Set the <strong>target management org</strong> and read the Current vs Target panels</li>
+          <li>Set a <strong>transfer date</strong> and apply a <strong>cost-center override</strong></li>
+          <li>Enter a <strong>reason</strong> and <strong>schedule the transfer</strong></li>
+          <li>See when the move actually executes, and why transfers need no approval step</li>
+        </ul>
+      </div>
+
+      <h2>1 — Open Position Transfer for Benjamin Rose</h2>
+      <p>Benjamin Rose currently sits at company level. You'll move his position to another org on a set date and watch the impact on both source and destination.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, find Benjamin Rose in the CPP and start Plan actions &rarr; Position Transfer.</strong></p>
+        <p>The transfer screen shows <strong>Current</strong> and <strong>Target</strong> panels side by side, plus before/after charts.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Locate <strong>Benjamin Rose</strong>'s position and open <strong>Position Transfer</strong> from Plan actions.</li>
+        <li>Read the <strong>Current</strong> panel — note where the position sits today and the source org's total positions.</li>
+        <li>Keep an eye on the <strong>before/after charts</strong>; they update as you fill in the target.</li>
+      </ol>
+
+      <img src="../img/screens/cpp-05-position-transfer.jpg" alt="OWP Position Transfer for Benjamin Rose — target management org, transfer date, cost-center override, Current vs Target panels, Schedule Transfer action, and before/after charts" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Position Transfer for Benjamin Rose: target management org, transfer date, cost-center override, and the Current vs Target panels with before/after charts.</p>
+
+      <h2>2 — Set the target org, date, and cost-center override</h2>
+      <p>Fill in the target management org and the date, then use the cost-center override to align cost independently of the org's default mapping.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, set the target management org and transfer date, then apply a cost-center override.</strong></p>
+        <p>In the demo the cost aligned to <strong>"Field Sales EMEA"</strong> instead of the default <strong>"outside sales"</strong> cost center.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Set the <strong>target management org</strong> — the destination the position moves to. Watch the <strong>Target</strong> panel and the destination org's total positions update.</li>
+        <li>Set a <strong>transfer date</strong>. Transfers are scheduled at the <strong>month level</strong>, not day level.</li>
+        <li>Apply a <strong>cost-center override</strong>: align the cost to a different cost center — the demo used <strong>Field Sales EMEA</strong> in place of the default <strong>outside sales</strong>. This deliberately breaks the one-to-one org &harr; cost-center mapping.</li>
+      </ol>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Why the cost-center override exists</span>
+        <p>The default is a one-to-one mapping between an org and its cost center. The override is a customer enhancement that lets a position report cost against a different cost center than its org's default — useful when finance groups cost differently from the supervisory org.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Does a position transfer need to go through an <strong>approval</strong> step before it takes effect?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-approval" value="A"><span class="lab-quiz-letter">A</span><span>Yes — a manager must approve every transfer in a queue before it is scheduled</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-approval" value="B"><span class="lab-quiz-letter">B</span><span>No — there is no approval process on transfers; a scheduled transfer simply executes when its date hits</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-approval" value="C"><span class="lab-quiz-letter">C</span><span>Yes — Finance must approve the cost-center override before the transfer saves</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-approval" value="D"><span class="lab-quiz-letter">D</span><span>No — but only because Benjamin Rose sits at company level</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> There is no approval process on transfers today — once scheduled, a transfer just executes when its date hits. Approvals on transfers are logged as a good future enhancement, but they are not in the current app.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. Transfers have no approval step; a scheduled transfer executes when its date hits. That is true for any position, not just Benjamin Rose, and the cost-center override does not add an approval gate.</div>
+      </div>
+
+      <h2>3 — Enter a reason and schedule the transfer</h2>
+      <p>Record why the move is happening, then schedule it. The position doesn't move immediately — it moves when the model rolls to the transfer month.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, enter a reason and click Schedule Transfer.</strong></p>
+        <p>Confirm the Target panel and before/after charts reflect the move you set up.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Enter a <strong>reason</strong> for the transfer so the change is traceable.</li>
+        <li>Review the <strong>Current vs Target</strong> panels one more time — confirm the destination org and the overridden cost center are correct.</li>
+        <li>Click <strong>Schedule Transfer</strong>. When the model rolls to the transfer month, the position moves and actuals align as HCM data arrives.</li>
+      </ol>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: Position Transfer scheduled confirmation]</span>
+        <span class="ss-desc">The confirmation state after clicking Schedule Transfer — the Target panel and before/after charts reflecting the scheduled move, with the transfer marked as scheduled for its future month.</span>
+      </div>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Transfer limitations</span>
+        <p>Transfers are <strong>one at a time</strong> — there is no mass transfer yet (a future enhancement). There is <strong>no approval process</strong> on transfers, and they are scheduled at the <strong>month level</strong>, not day level.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>You clicked Schedule Transfer with a future date. <strong>When</strong> does the position actually move?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-when" value="A"><span class="lab-quiz-letter">A</span><span>Immediately, the moment you click Schedule Transfer</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-when" value="B"><span class="lab-quiz-letter">B</span><span>Only after an approver signs off in the workflow queue</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-when" value="C"><span class="lab-quiz-letter">C</span><span>When the model rolls to the transfer month — the position moves then and actuals align as HCM data arrives</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-transfer-when" value="D"><span class="lab-quiz-letter">D</span><span>Exactly on the day you picked, down to the calendar day</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> The transfer is scheduled, not immediate — it executes when the model rolls to the transfer month, at which point the position moves and actuals align as HCM data flows in. Scheduling is at the month level, so there is no day-level precision.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. A scheduled transfer executes when the model rolls to the transfer month — not instantly, not via an approval queue (there is none), and not to a specific calendar day, since transfers are month-level.</div>
+      </div>
+
+      <div class="lab-check" data-check-id="transfer-a-position" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've opened Benjamin Rose's Position Transfer, set the target org and date, applied the cost-center override, entered a reason, and scheduled the transfer, click below to verify.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">Position transfer scheduled.</p>
+          <ul class="lab-check-list">
+            <li><strong>Position Transfer opened</strong> &rarr; started for Benjamin Rose from Plan actions, Current panel read</li>
+            <li><strong>Target management org set</strong> &rarr; destination chosen, Target panel and org totals updated</li>
+            <li><strong>Transfer date set</strong> &rarr; at the month level, not day level</li>
+            <li><strong>Cost-center override applied</strong> &rarr; cost aligned to a different cost center (e.g. Field Sales EMEA) than the org default</li>
+            <li><strong>Reason entered and scheduled</strong> &rarr; Schedule Transfer clicked; the move executes when the model rolls to the transfer month</li>
+          </ul>
+          <p class="lab-check-next">Next up: transfer a worker into an open position.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You applied a cost-center override so Benjamin Rose's position reports cost to a different cost center than its org's default. Why would a customer want this, and what does it do to the usual one-to-one org &harr; cost-center mapping?</li>
+        <li>The transfer has no approval step and executes when the model rolls to the transfer month. How would you explain that timing to a manager who expects the move to show up the day they scheduled it?</li>
+        <li>Transfers are one at a time — there is no mass transfer yet. How would you set expectations with a customer who wants to reorganize dozens of positions at once?</li>
+        <li>What if you must transfer a position to an org you don't have access to? Walk through the options — modifying access versus having a higher-access user do it — and why an approval path would be the cleaner long-term answer.</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-05-transfers.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-lab-worker-transfer.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

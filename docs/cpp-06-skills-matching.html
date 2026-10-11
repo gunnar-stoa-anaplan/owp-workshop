@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Matching — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Skills Matching</h1>
+      <p class="subtitle">Finding internal candidates — and why the data fights back</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Walkthrough</span>
+        <span class="content-badge">10 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Skills matching lets you search the workforce for internal candidates who fit a role by their skills, rather than starting an external hire. It's a genuinely useful capability — and a good place to be honest with customers about how much depends on the quality of their skills data.</p>
+
+      <h2>Worked example: matching by skills</h2>
+      <p>Search workers by skills — for example accounts payable, financial analysis, financial modeling, and planning — with a <strong>match threshold</strong> that controls how strict the match has to be.</p>
+      <ul>
+        <li><strong>75%</strong> — too high; the strict threshold returns too few candidates.</li>
+        <li><strong>50%</strong> — loosen it and more candidates appear.</li>
+        <li><strong>25%</strong> — the best results in this example.</li>
+      </ul>
+      <p>From the results you can drill into a candidate — here, <strong>Jennifer Hills</strong> — to check role, tenure, and performance before considering her for the position.</p>
+      <p>The example also uses the job <strong>General Counsel</strong>, where <strong>regulatory compliance</strong> is flagged as a <strong>critical skill</strong>. That critical-skill flag illustrates where a future weighting module would come in — giving critical skills more pull in the match than ordinary ones.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Roadmap / forward-looking</span>
+        <p>The skill-weighting module is roadmap and forward-looking, under Anaplan's safe-harbor caveat. Today, matching treats skills fairly flatly; weighting critical skills and proficiency more heavily is a future enhancement, not current out-of-the-box behavior.</p>
+      </div>
+
+      <img src="../img/screens/cpp-06-skill-search.jpg" alt="OWP Application Worker Skill Search — Select a Skill Category (Finance), a Select Skills grid with Required Skill / Critical Skill / Minimum Proficiency toggles (Accounts Payable, Financial Analysis, Financial Planning, Financial Modeling selected), a % Match Threshold of 50, and Worker / Position / Job results with match percentages" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Worker Skill Search — required/critical skills with the % match threshold; shown here at 50%.</p>
+
+      <h2>The gotcha: dirty data and manual matching</h2>
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Skills data is very dirty</span>
+        <p>Skills data is notoriously messy — <em>"you have people that spell planning with four N's."</em> Free-text and inconsistent skill entries mean the same skill shows up several different ways, which is exactly why you often have to drop the match threshold to 25% to get useful results.</p>
+      </div>
+      <p>On top of that, skills matching is a <strong>manual process out of the box</strong>. The app helps you search and compare candidates, but it doesn't automatically place people — a person still reviews the matches and decides. Set that expectation with customers so they don't assume automated matching at the outset.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-lab-worker-transfer.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-lab-skills.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

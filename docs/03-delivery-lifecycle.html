@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Delivery Lifecycle — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>The Delivery Lifecycle</h1>
+      <p class="subtitle">Four phases from data load to a running, extended app</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Method · 2</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>An OWP delivery moves through four phases: a pre-project phase to confirm fit, a data-driven configuration phase, a fork into two paths depending on what the customer needs, and — where needed — extension design and delivery. The order is the same every time; how long you spend in each phase depends on the customer's data and appetite.</p>
+
+      <h2>Phase 1 — Pre-project</h2>
+      <p>The goal here is to confirm the app is a fit and set up everything the configuration phase will need.</p>
+      <ul>
+        <li>Run a <strong>deep-dive demo</strong> of the app — show what it does and understand what the customer actually wants to use.</li>
+        <li>Hold a <strong>discovery workshop</strong>, review the <strong>functional scope</strong>, and run a <strong>data-readiness</strong> assessment: can the customer bring employee, job-role, and compensation data — yes or no?</li>
+        <li>Produce the <strong>Statement of Work (SOW)</strong> with high-level scope and compatibility.</li>
+      </ul>
+      <div class="callout-note">
+        <span class="callout-label">📝 Templates go out early</span>
+        <p>The data templates and solution guide are shared <strong>before kickoff</strong>, during this phase. See <a href="./04-data-templates.html">Data Templates &amp; Readiness</a> for what's in them and how to use them.</p>
+      </div>
+
+      <h2>Phase 2 — Configuration</h2>
+      <p>This phase is where the app becomes the customer's app. It is entirely data-driven and iterative — "data is the most important part."</p>
+      <ul>
+        <li>Use the templates to capture the right level of detail per dimension, the right number of hierarchy levels, and the right properties.</li>
+        <li>Most of the work is <strong>on the customer side</strong> — they design and extract data from their systems into the expected templates.</li>
+        <li>Do the <strong>settings</strong> in the config pages: currency, current date, number of roles, approvers, which workflow to deliver, and so on.</li>
+      </ul>
+
+      <p>The heart of the phase is an iterative loop: load data, find what's missing or mis-coded, go back to the customer for a new file or fields, and reload.</p>
+      <div class="callout-tip">
+        <span class="callout-label">💡 Close the loop with the customer</span>
+        <p>"You load data… and then share with the customer: Are you happy with this data? Is this your data? Do you recognize your hierarchy?"</p>
+      </div>
+
+      <p>The output of this phase is <strong>an app running with data, ready to use</strong> — followed by an <strong>onboarding workshop</strong> with the customer. Teams can duplicate the app to test multiple settings, and can restart from zero at any time using the stored templates.</p>
+
+      <h2>Phase 3 — Two paths from a configured app</h2>
+      <p>Once the app is configured and running with data, the engagement forks based on what the customer needs.</p>
+      <div class="two-col">
+        <div class="card">
+          <h3>Happy as-is</h3>
+          <p>The customer is satisfied with the configured app → move to <strong>test / UAT</strong>, running user-testing scenarios, then use it as-is.</p>
+        </div>
+        <div class="card">
+          <h3>Needs more</h3>
+          <p>The customer needs capability beyond the app → move to <strong>extensions</strong>: an additional report, a new dataset not in OWP, or a new rule or calculation.</p>
+        </div>
+      </div>
+      <div class="callout-note">
+        <span class="callout-label">📝 The paths aren't strictly ordered</span>
+        <p>Test and extensions can run <strong>both ways</strong> — you might postpone testing to wait for an extension, or test first and extend afterward.</p>
+      </div>
+
+      <h2>Phase 4 — Extension design &amp; delivery</h2>
+      <p>When extensions are in scope, you deliver them as a <strong>regular Anaplan change</strong>: write the stories, plan a sprint, deliver, and test.</p>
+      <div class="callout-important">
+        <span class="callout-label">🚨 Design not to break what works</span>
+        <p>What's different is <em>how you design</em>. You're changing a fully functional app of roughly 200 modules, so the focus is <strong>not to break something that's working</strong>.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./02-app-led-delivery.html">← Previous</a>
+        <a class="prevnext-btn" href="./04-data-templates.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

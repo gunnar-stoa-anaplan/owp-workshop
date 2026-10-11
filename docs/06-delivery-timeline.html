@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Timeline — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Delivery Timeline</h1>
+      <p class="subtitle">A week-by-week plan — and why to double it</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Method · 5</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Here is the timeline the presenter sketches for an OWP delivery — and then the honest correction he adds on top of it. Start with the optimistic version to see the shape of the work, then plan against the realistic one.</p>
+
+      <h2>The optimistic timeline</h2>
+      <p>The presenter is candid that this is the best case — <em>"in projects, I never have seen this one."</em> Treat it as the shape of the phases, not a schedule you can commit to.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Duration</th>
+              <th>What happens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Week 0</strong></td>
+              <td>1–2 weeks</td>
+              <td>Pre-project. Meet the business users, understand what data can be ingested, confirm high-level coverage, then give the green light. Templates are provided before kickoff.</td>
+            </tr>
+            <tr>
+              <td><strong>Weeks 1–3</strong></td>
+              <td>~3 weeks</td>
+              <td>Configuration. Workshops roughly every two days. Iterate the loop — take data, load data, change data, reload data — and set the pages, until the app is available.</td>
+            </tr>
+            <tr>
+              <td><strong>Weeks 4–6+</strong></td>
+              <td>4 weeks and up</td>
+              <td>Testing and extensions. Duration depends entirely on the number of extensions in scope.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 A best case, not a promise</span>
+        <p>The presenter has <em>"never seen this one"</em> run to plan. Use the table to explain the phases to a customer — not to set the delivery date.</p>
+      </div>
+
+      <h2>The realistic guidance: double it</h2>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Double the time</span>
+        <p>Take the optimistic timeline and <strong>double it</strong>. <strong>Week 0 alone can take a month.</strong> Plan against the doubled version and you will be far closer to reality.</p>
+      </div>
+
+      <p>The reason is almost always the same: <em>"the data is the long pole in the tent… the worst part."</em> Data prep is what stretches the schedule, so start it roughly <strong>three weeks before</strong> the project formally begins.</p>
+
+      <h2>What drives the delays</h2>
+      <ul>
+        <li><strong>Customers needing their IT / Workday teams</strong> to build new reports or new fields before the data can even be extracted. That work sits outside your control and rarely moves fast.</li>
+        <li><strong>Customers who don't yet know what they want</strong> — organizations with no prior workforce-planning experience take longer because the requirements are still forming as you go.</li>
+      </ul>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Prior WFP experience speeds things up</span>
+        <p>Customers who already run a workforce-planning app move faster — for them it's largely <em>"just connect the dots."</em> The heavy lifting of defining the process is already done, so configuration and data prep go more smoothly.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./05-extensions-vs-core.html">← Previous</a>
+        <a class="prevnext-btn" href="./07-integration-architecture.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

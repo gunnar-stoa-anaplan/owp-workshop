@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Northwind Global — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Case Study: Northwind Global</h1>
+      <p class="subtitle">The fictional customer used in the delivery labs</p>
+      <div class="badge-row">
+        <span class="content-badge">Case Study</span>
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p><strong>Northwind Global</strong> is the fictional customer the delivery decision labs reason about. When a lab asks you to judge whether the customer is ready to start, or how to map their data into the OWP templates, this page is your source of truth. Keep it open alongside the labs.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Keep This Page Open</span>
+        <p>The company profile, hierarchies, and data situation here are the reference for the two delivery labs — Data Readiness and Map the HR Extract. Whenever a lab asks you to make a call based on the customer's situation, come back here.</p>
+      </div>
+
+      <h2>Company profile</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>About Northwind Global</h3>
+          <ul>
+            <li><strong>Type:</strong> Global B2B technology &amp; services company</li>
+            <li><strong>Size:</strong> ~8,000 employees</li>
+            <li><strong>Regions:</strong> North America (HQ Boston), EMEA (London), APAC (Singapore)</li>
+            <li><strong>HCM system:</strong> Workday</li>
+            <li><strong>Recruiting (ATS):</strong> Greenhouse</li>
+            <li><strong>Headcount budget today:</strong> Excel, set annually by Finance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>The pain — why OWP</h3>
+          <p>Finance sets a headcount budget in a spreadsheet; HR creates positions in Workday ad hoc; Talent recruits from a separate req list. The three never reconcile — so Northwind over-hires in some orgs, under-hires in others, and Finance gets budget surprises every quarter.</p>
+          <p>There is <strong>no link</strong> between what's budgeted, what's planned, and what's being recruited. That's the closed-loop / plan-to-hire gap OWP closes.</p>
+        </div>
+      </div>
+
+      <h2>What Northwind wants (scope)</h2>
+      <ul>
+        <li>Position-based planning with the <strong>WFB &rarr; CPP</strong> loop.</li>
+        <li><strong>Selective access</strong> by region + function (an EMEA HRBP sees only EMEA).</li>
+        <li>A <strong>skills view</strong> for internal mobility — fill open roles internally first.</li>
+        <li>On worker cards: expose <strong>gender</strong> and <strong>performance rating</strong>, but <strong>not race / ethnicity</strong> (a per-customer DEI toggle — a good teaching point).</li>
+        <li><strong>No role-grade planning</strong> — Northwind plans by role, not by grade. Don't enable Role Grade when it isn't needed.</li>
+      </ul>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Teaching Points</span>
+        <p>Two of Northwind's asks are really "don't over-configure" lessons: the DEI toggle (expose gender and performance, but keep race / ethnicity off) and the Role Grade decision (leave it off — Northwind plans by role, not grade). Enabling either when the customer doesn't need it adds complexity for no benefit.</p>
+      </div>
+
+      <h2>Organization &amp; hierarchies</h2>
+      <p>Northwind organizes work into three function / job families. The job codes below are the ones you'll see in the HR extract during the mapping lab.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Function</th><th>Roles (job code)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>GTM</strong></td>
+              <td>Account Executive (SLS-AE), Senior AE (SLS-AE-SR), Solutions Engineer (ENG-SE), Customer Success Manager (CS-CSM), Regional Sales Director (SLS-MGR)</td>
+            </tr>
+            <tr>
+              <td><strong>Engineering</strong></td>
+              <td>Software Engineer (ENG-SW), Senior Software Engineer (ENG-SW-SR), Pre-Sales Engineer (ENG-SE), Engineering Manager (ENG-MGR)</td>
+            </tr>
+            <tr>
+              <td><strong>G&amp;A</strong></td>
+              <td>Financial Analyst (FIN-ANL), HR Business Partner (HR-HRBP), Counsel (LGL-CNS), General Counsel (LGL-GC)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Management (supervisory) org</h3>
+          <p>Exists in Workday. Example orgs: <code>Global Sales &rarr; EMEA Enterprise Sales</code>, <code>NA Customer Success</code>, <code>APAC Engineering</code>, <code>NA Finance</code>, <code>Legal</code>.</p>
+          <p>This drives half the app — the supervisory-org rollup is mandatory.</p>
+        </div>
+        <div class="card">
+          <h3>Budget hierarchy (5 levels)</h3>
+          <p>Total Company &rarr; Function &rarr; Region &rarr; Department &rarr; Cost Center.</p>
+          <p>Not yet structured in a tool — it lives in the Finance spreadsheet. Needed for WFB; you can start with a dummy 5-level hierarchy and refine.</p>
+        </div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Job Levels / Job Catalog</span>
+        <p>Job levels and the job catalog are maintained in Workday. They are foundational: <strong>bring them into OWP, but do not create new job levels in OWP.</strong></p>
+      </div>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: Northwind org &amp; management hierarchy]</span>
+        <span class="ss-desc">A diagram or screenshot of Northwind's supervisory-org hierarchy (Global Sales &rarr; EMEA Enterprise Sales, NA Customer Success, APAC Engineering, NA Finance, Legal), showing the rollup used throughout the delivery labs.</span>
+      </div>
+
+      <h2>Planning scenarios</h2>
+      <p>Northwind runs three scenarios side by side:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Scenario</th><th>What it represents</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Baseline</strong></td><td>The annual headcount budget as approved.</td></tr>
+            <tr><td><strong>Stretch</strong></td><td>A faster-hiring scenario.</td></tr>
+            <tr><td><strong>Conservative</strong></td><td>A hiring-slowed scenario.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 How this case study is used</span>
+        <p>Northwind Global is invented teaching material — it gives the delivery methodology something concrete to reason about. The <strong>delivery labs</strong> (Data Readiness Assessment, Map the HR Extract) reason about Northwind's situation and data. The <strong>application labs</strong> (in WFB, CPP, and Security) use the training tenant's own Golden Copy data instead, so they don't reference Northwind.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./00-overview.html">← Previous</a>
+        <a class="prevnext-btn" href="./00-tenant-access.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

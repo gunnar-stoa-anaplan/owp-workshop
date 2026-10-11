@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Roles &amp; Security Model — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>User Roles &amp; Security Model</h1>
+      <p class="subtitle">Roles, features, and the UX page-security matrix</p>
+      <div class="badge-row">
+        <span class="content-badge">Security</span>
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>OWP ships with a security model built around two ideas: <strong>who</strong> a user is (their role) and <strong>what</strong> they can see and do (the pages and features they reach). Two slides from the sessions describe this — the user-roles matrix and the UX page-security matrix. Both are delivered out of the box and both are fully customizable.</p>
+
+      <h2>The user-roles matrix</h2>
+      <p>The first slide (the one the presenter joked <em>"John Pitstick hates"</em>) lays out the roles down the left and the feature and functionality buckets across the top. Each cell shows the out-of-the-box access a role has to a bucket — a quick reference for who does what in the app before you tailor anything.</p>
+
+      <p>The roles down the left of the matrix are:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>What they do in OWP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Workforce planners</td>
+              <td>Own the position plan — plan positions, run scenarios, and steward the operational view.</td>
+            </tr>
+            <tr>
+              <td>Analysts</td>
+              <td>Analyze positions, costs, and workforce data across the org.</td>
+            </tr>
+            <tr>
+              <td>HRBPs</td>
+              <td>HR business partners working positions, workers, and movement for their part of the org.</td>
+            </tr>
+            <tr>
+              <td>People leaders</td>
+              <td>Managers who review and act on their team's positions and plans.</td>
+            </tr>
+            <tr>
+              <td>Talent acquisition</td>
+              <td>Recruit against open and planned positions coming out of the plan.</td>
+            </tr>
+            <tr>
+              <td>Comp &amp; rewards</td>
+              <td>Work compensation on positions and workers.</td>
+            </tr>
+            <tr>
+              <td>FP&amp;A</td>
+              <td>Finance planning and analysis — budget, forecast, and cost views.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Across the top of the same matrix are the <strong>feature and functionality buckets</strong>, and each cell tells you the access a given role gets to that bucket out of the box. It is the fastest way to answer "can this role do this?" at a glance.</p>
+
+      <h2>The UX page-security matrix</h2>
+      <p>The second slide goes a level deeper. Where the roles matrix is about features, the UX page-security matrix is about <strong>pages</strong>. It is organized by:</p>
+
+      <ul>
+        <li><strong>Categories</strong> — the groupings the UX pages fall into.</li>
+        <li><strong>Pages</strong> — the individual UX pages within each category.</li>
+        <li><strong>Which model</strong> each page applies to.</li>
+        <li><strong>Per-role access</strong> — for example workforce planner, HRBP, and Finance — showing what each role can reach on each page.</li>
+      </ul>
+
+      <p>As with the roles matrix, everything here is <strong>customizable</strong>. The delivered matrix is a starting point; you adjust categories, page access, and per-role visibility to match how the customer actually works.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Two matrices, two altitudes</span>
+        <p>Read the roles matrix for the big picture — who owns what feature. Read the UX page-security matrix when you need the detail — which role reaches which page in which model. Together they define the delivered security posture you then tailor.</p>
+      </div>
+
+      <h2>One model role per user</h2>
+      <p>Anaplan allows only <strong>one model role per user</strong>. That sounds limiting, but the UX layer gives you room to work: <strong>UX-page access can be modified</strong> — pages removed or changed per user — so you can simulate what would otherwise need multiple roles. A user keeps a single model role while their page access is tuned to the exact mix they need.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Pending SME Input</span>
+        <p>[PENDING SME input] <em>Only the structure of the two matrices was shown on the recordings — the roles and buckets, and the category / page / model / per-role columns. The exhaustive cell-by-cell matrix (the actual out-of-the-box access for every role against every feature and page) is to be provided separately as documentation and is not captured here.</em></p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-08-org-modeling.html">← Previous</a>
+        <a class="prevnext-btn" href="./sec-02-selective-access.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

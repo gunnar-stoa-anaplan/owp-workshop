@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Configure Selective Access — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Configure Selective Access</h1>
+      <p class="subtitle">Grant access and watch it cascade</p>
+      <div class="badge-row">
+        <span class="content-badge">Security</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Hands-On</span>
+        <span class="content-badge">20 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📝 How this lab works</span>
+        <p>This is a guided exploration of your own OWP training tenant — there is no scripted dataset to follow step-by-step. Work in the security management hub (2.1), grant access, and watch how it cascades. The user names from the recordings (Alex, Mariah, Anna) are examples so you know what to look for; use whichever users exist in your tenant.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Open the <strong>security management hub</strong> and select a user</li>
+          <li>Grant <strong>write access</strong> to an org and confirm it <strong>cascades</strong> to underlying management orgs and aligned positions</li>
+          <li>Repeat the grant from the <strong>budget-hierarchy (BH)</strong> side</li>
+          <li><strong>Copy/paste access rows</strong> to another user and push to models</li>
+          <li>Observe how selective access changes what a user sees</li>
+        </ul>
+      </div>
+
+      <h2>1 — Select a user in the security hub</h2>
+      <p>The security management hub in 2.1 is where you manage who can see and do what — all through the UX, writing straight back to the model.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, open the security management hub.</strong></p>
+        <p>Pick a user to work with (recording examples: Alex, Mariah, Anna).</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Open the security management hub and locate the list of users.</li>
+        <li>Select a user and review their current access.</li>
+        <li>Note that the hub also manages users once added — you can change a user's <strong>model role</strong> and review or update their access from the same place.</li>
+      </ol>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 One model role per user</span>
+        <p>Anaplan allows only <strong>one model role per user</strong>. You can still modify <strong>UX-page access</strong> (remove or change pages) to simulate the effect of multiple roles, but the underlying model role is singular.</p>
+      </div>
+
+      <h2>2 — Grant write access to an org and watch it cascade</h2>
+      <p>This is the heart of selective access: grant once at an org and it flows down automatically. Manual grants would be a "nightmare" for a 40&ndash;50k-person org — the cascade is the point.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, grant your selected user write access to an org.</strong></p>
+        <p>Recording example: granting write access to "global sales."</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Grant the user <strong>write access</strong> to an org (e.g. "global sales" in the recording).</li>
+        <li>Confirm it <strong>automatically cascades</strong> to all underlying management orgs — even though the org list is stored flat.</li>
+        <li>Confirm it also cascades to <strong>all positions aligned to those orgs</strong>.</li>
+      </ol>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Flat list, hierarchical cascade</span>
+        <p>The management org list is stored flat, but 2.1 builds a hierarchical view behind the scenes and cascades the grant down it — to underlying orgs and every aligned position. You grant at one level; the app does the rest.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="A">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>You grant a user write access to an org from the flat management-org list. Does that access cascade down to the positions aligned to those orgs?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-cascade" value="A"><span class="lab-quiz-letter">A</span><span>Yes — in 2.1 it cascades to underlying management orgs and to all aligned positions</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-cascade" value="B"><span class="lab-quiz-letter">B</span><span>No — because the org list is flat, you must grant each position individually</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-cascade" value="C"><span class="lab-quiz-letter">C</span><span>Only if you grant from the budget-hierarchy side instead</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-cascade" value="D"><span class="lab-quiz-letter">D</span><span>Only after an ALM upgrade rebuilds the hierarchy</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Despite the flat list, 2.1 builds a hierarchical view and the grant cascades to all underlying management orgs and to every position aligned to them. That automatic cascade is exactly why manual access would be a nightmare for a 40&ndash;50k-person org.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>A</strong>. Even though the org list is flat, 2.1 cascades the grant to underlying orgs and all aligned positions automatically. It works from the budget-hierarchy side too, and it does not depend on an ALM upgrade.</div>
+      </div>
+
+      <h2>3 — Repeat from the budget-hierarchy side</h2>
+      <p>The same cascade works from the budget hierarchy (BH), not just the management-org side.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, grant access against a budget-hierarchy node.</strong></p>
+        <p>Recording example: granting against everything under "Operations."</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Switch to the budget-hierarchy view and select a node (e.g. "Operations").</li>
+        <li>Grant access against everything under it.</li>
+        <li>Confirm it cascades to all cost centers underneath <em>and</em> to the budget positions.</li>
+      </ol>
+
+      <h2>4 — Copy access to another user</h2>
+      <p>There is no dedicated "copy from user to user" button, but you can move access rows by hand and push them across all models.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, copy the access rows from one user and paste them onto another.</strong></p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Select the access rows on your configured user.</li>
+        <li><strong>Copy/paste</strong> those rows onto a second user.</li>
+        <li>Push to models — this works across all models.</li>
+      </ol>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Pending SME Input</span>
+        <p>[PENDING SME input] <em>A nuance about where selective access is implemented during an upgrade (dev vs UAT, ALM to UAT) was logged as a question to the internal product framework team and was not resolved on the recordings. What we do know: an upgrade shouldn't overwrite selective-access changes, since builders don't modify selective access — "only if we change it on our end will it overwrite."</em></p>
+      </div>
+
+      <div class="lab-check" data-check-id="configure-selective-access-cascade" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've granted org access and watched it cascade, repeated it from the budget-hierarchy side, and copied access to a second user, click below to verify.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">Selective access configured and verified.</p>
+          <ul class="lab-check-list">
+            <li><strong>User selected</strong> &rarr; opened the security management hub and reviewed the user's current access and model role</li>
+            <li><strong>Org grant cascaded</strong> &rarr; write access to an org flowed to underlying management orgs and all aligned positions</li>
+            <li><strong>Budget-hierarchy grant cascaded</strong> &rarr; access against a BH node flowed to cost centers underneath and budget positions</li>
+            <li><strong>Access copied</strong> &rarr; access rows copy/pasted to a second user and pushed to models</li>
+            <li><strong>Impact observed</strong> &rarr; confirmed selective access governs what the user sees (drop-downs, positions, transfer targets)</li>
+          </ul>
+          <p class="lab-check-next">Next: observe how the change reshapes the user's view, then head to the debrief.</p>
+        </div>
+      </div>
+
+      <h2>5 — Observe how selective access changes what the user sees</h2>
+      <p>Selective access is not just about who can edit — it governs everything a user is shown.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, look at the app as (or on behalf of) the user whose access you changed.</strong></p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Check the <strong>drop-downs</strong> — do they now show only the orgs and positions the user can reach?</li>
+        <li>Check the <strong>positions</strong> visible in the CPP grid for that user.</li>
+        <li>Check the <strong>transfer targets</strong> available to them — selective access governs these too.</li>
+      </ol>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Job levels are foundational</span>
+        <p>You <strong>cannot create new job levels in OWP</strong> — the job-level framework is foundational. Create job levels in Workday / your HCM and bring them in. Selective access controls who sees what; it does not let you extend the foundational framework.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="D">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>A customer asks you to create a new <strong>job level</strong> directly in OWP. What's the right answer?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-joblevels" value="A"><span class="lab-quiz-letter">A</span><span>Yes — grant yourself write access to the org and add it in the security hub</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-joblevels" value="B"><span class="lab-quiz-letter">B</span><span>Yes — but only from the budget-hierarchy side</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-joblevels" value="C"><span class="lab-quiz-letter">C</span><span>Yes — copy the access rows from a user who already has that level</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-sec-joblevels" value="D"><span class="lab-quiz-letter">D</span><span>No — job levels are foundational; create them in Workday / the HCM and bring them in</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Job levels are foundational — you cannot create new ones in OWP. They're created in the HCM (e.g. Workday) and brought in. Selective access controls visibility and edit rights; it does not extend the foundational framework.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>D</strong>. You cannot create new job levels in OWP — they're foundational and come from the HCM system. Granting access, switching to the budget-hierarchy side, or copying access rows all deal with <em>visibility</em>, not with adding a job level.</div>
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You granted write access to one org and it cascaded to underlying orgs and aligned positions. Why is that cascade essential for a 40&ndash;50k-person org, and what would the alternative cost?</li>
+        <li>The management-org list is stored flat, yet the grant still cascaded down a hierarchy. Explain to a customer how both can be true at once.</li>
+        <li>There's no dedicated copy-user-to-user button, but you copied access rows across models. How would you document this so an admin can repeat it safely?</li>
+        <li>A customer wants a brand-new job level added inside OWP. How do you respond, and where does that change actually belong?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./sec-02-selective-access.html">← Previous</a>
+        <a class="prevnext-btn" href="./90-optimizer.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

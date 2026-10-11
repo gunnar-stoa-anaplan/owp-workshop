@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WFB → CPP Bridge — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>WFB &rarr; CPP Bridge</h1>
+      <p class="subtitle">Syncing budgeted positions into the plan</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Walkthrough</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Once the budget is closed on the WFB side, the budgeted positions need to become part of the live plan. That is what the bridge does: it pushes and synchronizes a budget iteration into the CPP, so the positions you budgeted for turn into positions the organization can act on.</p>
+
+      <h2>Pushing a budget iteration</h2>
+      <p>From the budgeting side you <strong>push</strong> — or synchronize — a budget iteration into the CPP. The iteration is a version of the budget, commonly a <strong>"baseline"</strong>. Syncing the baseline takes all the planned positions in that iteration and moves them into the plan in one action.</p>
+
+      <h2>The sync grid</h2>
+      <p>The sync is driven from a grid that lays out every planned position in the iteration, so you can see exactly what is about to move into the plan. Each row is a planned position with the details that define it:</p>
+      <ul>
+        <li>The <strong>planned positions</strong> themselves — for example "senior IT specialists" or "VPs of R&amp;D."</li>
+        <li>The <strong>budget hierarchy</strong> they map to.</li>
+        <li>Their <strong>management org</strong>.</li>
+        <li>Their <strong>target start dates</strong>.</li>
+        <li>Their <strong>costs</strong>.</li>
+      </ul>
+
+      <img src="../img/screens/cpp-02-iteration-publishing.jpg" alt="OWP Application (Golden Copy) Iteration Publishing screen — the Baseline May 2026 budget iteration with Total New Positions (25), a Mapped Positions grid (Management Org, Budget Hierarchy, Target Start, FTE, Start-Adjusted Fully Loaded Cost, Position Location, Job Level), start-adjusted and full-year cost tiles, the Forecast + Position Budget Changes chart, and the Publish to Continuous Position Plan button" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Iteration Publishing in the OWP workshop app — mapped positions ready to publish into the Continuous Position Plan.</p>
+
+      <h2>Previewing the impact</h2>
+      <p>Before you commit the sync, you can <strong>preview the potential impact to the plan</strong>. This lets you see what the incoming positions would do before they land, rather than syncing first and finding out afterward. The preview can be scoped:</p>
+      <ul>
+        <li><strong>By individual org</strong> — for example, the impact on the "compliance team."</li>
+        <li><strong>Globally</strong> — the impact across the whole plan.</li>
+      </ul>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: impact preview screen]</span>
+        <span class="ss-desc">The impact-preview view showing the effect of the sync on the plan, scoped to a single org (e.g. the compliance team) or globally.</span>
+      </div>
+
+      <h2>An admin action, once the budget is closed</h2>
+      <div class="callout-important">
+        <span class="callout-label">🚨 This is an admin action</span>
+        <p>The sync is an <strong>admin action</strong>, run once the budget is closed. It pushes all planned positions from the iteration into the CPP in one go. Because it commits the whole iteration, you review it in the grid and check the impact preview before running it.</p>
+      </div>
+
+      <p>After the sync, those planned positions live in the CPP and can be worked from the CPP workspace — filled, transferred, edited, or departed — as covered on the next page.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-01-overview.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-03-workspace.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

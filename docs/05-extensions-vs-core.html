@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extensions vs. Core Changes — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Extensions vs. Core Changes</h1>
+      <p class="subtitle">Add, don't change — and keep the upgrade path intact</p>
+      <div class="badge-row">
+        <span class="content-badge">Delivering OWP</span>
+        <span class="content-badge">Method · 4</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>OWP ships as a fully functional application — roughly 200 modules of structure, logic, and workflow. When a customer needs something the app doesn't do out of the box, you extend it. The skill is knowing how to extend so you get the new capability <em>and</em> keep a clean upgrade path to the next version.</p>
+
+      <h2>Rule of thumb: add, don't change</h2>
+      <p>The safest extensions add to the app rather than rewrite it. A new page, a new line item on a system module, a new calculation — these are, in the presenter's words, an <em>"easy extension without changing the core app."</em> Because you leave the delivered components untouched, an upgrade can replace them without touching your work.</p>
+
+      <div class="callout-do">
+        <span class="callout-label">✅ Do</span>
+        <p>Reach for additive changes first: a new report, a new dataset OWP doesn't already carry, a new rule or calculation on top of what's there. Add net-new components; leave the delivered ones as they are.</p>
+      </div>
+
+      <h2>When you must change the core</h2>
+      <p>Sometimes an additive change isn't enough and you genuinely need to change the core app. When that happens, consult the Anaplan <strong>TS team / Delivery Advisor</strong> for the most effective, upgradeable way to do it. The goal is to make the change so the app can still be upgraded without breaking your extension.</p>
+
+      <p>OWP moves forward on a version path — <em>"today we are 2.1, then we have 2.2, 3.0, and so on."</em> Every core change you make has to survive that path. If it doesn't, the customer is stranded on an old version or facing a painful re-implementation at upgrade time.</p>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Protect the upgrade path</span>
+        <p>The point of a core change is to solve the customer's need <strong>without</strong> losing the ability to upgrade the app later. If a requested change would make future upgrades break the extension, that is a design conversation with Anaplan before you build — not after.</p>
+      </div>
+
+      <h2>The PATH framework</h2>
+      <p>Anaplan is building tooling to identify what was delivered by the app versus what was customized — the <strong>PATH</strong> application framework. The idea is that at upgrade time you can tell exactly which components are standard and which are extensions, so you know what needs to change and what can be left alone.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Pending SME Input</span>
+        <p>[PENDING SME input] <em>The detailed PATH walkthrough was part of a session segment that was not captured on the workshop recordings. The mechanics of how PATH classifies delivered vs. customized components are to be supplied by an SME.</em></p>
+      </div>
+
+      <h2>Impact depends on scope</h2>
+      <p>Not every change carries the same risk. What matters is how many things depend on the thing you're changing.</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Lower impact</h3>
+          <p>Changing a list that few modules depend on is low impact. Add a line item, add a page, add a calculation that references existing data — the blast radius is small and the upgrade path stays clean.</p>
+        </div>
+        <div class="card">
+          <h3>Higher impact</h3>
+          <p>Changing a <strong>core list</strong> — such as position or the supervisor / management org — touches a large share of the app. That is a design conversation with Anaplan, not a change you make on your own.</p>
+        </div>
+      </div>
+
+      <h2>The 60/40 rule: what "fit" really means</h2>
+      <p>Be candid with customers about fit. Out of the box, OWP covers roughly <strong>"60 to 70%"</strong> of what a customer wants (the presenter also framed it simply as <strong>"60%"</strong>). The remaining <strong>30–40%</strong> is extensions, configurations, and customizations. That's the 60/40 rule — set the expectation early rather than promising a perfect fit.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Frame it up front</span>
+        <p>Customers who buy an app usually want best practice. The 60/40 conversation is your chance to show where the app already does the job well and where a small amount of extension work closes the gap — instead of treating every gap as a surprise mid-build.</p>
+      </div>
+
+      <h2>Best practice: big extensions go in a separate model</h2>
+      <p>When an extension is large, build it as a separate model that feeds data into OWP rather than growing it inside the app.</p>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Cautionary tale</span>
+        <p>A customer built an entire detailed <strong>contractor</strong> capability <em>inside</em> OWP on an older version. In hindsight it should have been a <strong>separate model feeding data into OWP</strong>. Building it inside the app added data, modules, and processing bloat that a separate model would have kept out.</p>
+      </div>
+
+      <h2>Bad process in, bad out</h2>
+      <p>No amount of extension work rescues a broken process. As the presenter put it, <em>"no Anaplan model or application is going to fix a bad process."</em> Bad data or a bad process in means bad out.</p>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Lay out change management up front</span>
+        <p>Because OWP implementations go hand in hand with process change, put change management on the table early — in the sales cycle, at the outset — not once the build is underway. If the customer's process is the problem, an extension won't fix it.</p>
+      </div>
+
+      <h2>The Delivery Advisor role</h2>
+      <p>The Delivery Advisor is not there to teach partners how to build — <em>"you guys are stronger architects than I am."</em> The role is customer-facing advisory. The Delivery Advisor:</p>
+      <ul>
+        <li>Understands the requirement and advises <strong>where</strong> to build an extension and how to link it into the app.</li>
+        <li>Warns when a requested feature is <strong>already on the roadmap</strong>, so the customer can prioritize their build effort elsewhere.</li>
+        <li>Flags when a requested core change threatens upgradeability, before it becomes a problem.</li>
+      </ul>
+      <p>There should be a Delivery Advisor for <strong>EMEA</strong> and one for <strong>APAC</strong>.</p>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./04-lab-template-mapping.html">← Previous</a>
+        <a class="prevnext-btn" href="./06-delivery-timeline.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

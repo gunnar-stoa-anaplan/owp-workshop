@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position &amp; Worker Transfers — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Position &amp; Worker Transfers</h1>
+      <p class="subtitle">Moving positions and people; backfill vs. close</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Walkthrough</span>
+        <span class="content-badge">15 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>The CPP handles two kinds of moves: transferring a position from one org to another, and transferring a worker into a different open position. Both are plan actions, both are scheduled to a future date, and both take effect when the model rolls to that month.</p>
+
+      <h2>Position transfer — worked example: Benjamin Rose</h2>
+      <p>Benjamin Rose currently sits at the company level. The goal is to transfer his position to another org on a set date. As you configure the move, the CPP shows the impact on both the source and destination org — the total positions on each side update so you can see what the transfer does before it happens.</p>
+      <p>You can also override the cost center. By default an org maps one-to-one to a cost center, but here the position transfers into an org while its cost aligns to <strong>"Field Sales EMEA"</strong> instead of the default "outside sales" cost center. This is a customer enhancement that deliberately breaks the one-to-one org-to-cost-center mapping.</p>
+      <p>To complete the transfer you enter a <strong>reason</strong> and set a <strong>schedule date</strong>. When the model rolls to that date, the position moves and actuals align as HCM data arrives.</p>
+
+      <img src="../img/screens/cpp-05-position-transfer.jpg" alt="OWP Application (Golden Copy) Position Transfer for Benjamin Rose - General Counsel — Target Management Org (Outside Sales), Transfer Date, an open Cost Center Override picker, Current vs Target panels (manager, management org, cost center), Schedule Transfer / Cancel Transfer actions, and before/after position and cost charts" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Position Transfer for Benjamin Rose — current vs. target org, with the cost-center override.</p>
+
+      <h2>Worker transfer — worked example: Yumiko</h2>
+      <p>Yumiko is a senior hardware engineer, senior associate, based in <strong>London</strong>. To move her, you search all planned and open positions in the CPP filtered to <strong>"hardware"</strong>. The search returns:</p>
+      <ul>
+        <li>Open <strong>senior hardware engineer</strong> roles</li>
+        <li>A <strong>senior director of hardware engineering</strong> — which would require a move to <strong>Boston</strong></li>
+        <li>An <strong>EA</strong> role in <strong>London</strong> as an alternative</li>
+      </ul>
+      <p>This illustrates the internal-transfer cost savings story: rather than opening a fresh requisition, you place an existing worker into an open position. It also introduces the <strong>backfill vs. close</strong> flag on the position Yumiko is leaving.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Backfill vs. close</span>
+        <p>When a worker transfers out, you decide what happens to the vacated position. In this example, in <strong>October</strong> the vacated position ID flips to <strong>open</strong> (backfill — the role will be refilled) or to <strong>closed</strong> (close — the role goes away). The flag is what determines whether the org keeps the headcount or gives it up.</p>
+      </div>
+
+      <img src="../img/screens/cpp-05-worker-transfer.jpg" alt="OWP Application Worker Transfer for Yumiko Mackenzie — Select Transfer Period, a Select a Target Position list (position ID, location, status, job level, grade), Transfer Reason, the Close Departing Position? backfill/close checkbox, Schedule Transfer / Cancel Transfer, and Current vs Target Position panels (Senior Hardware Engineer, London)" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Worker Transfer for Yumiko Mackenzie — target-position search and the Close Departing Position? flag.</p>
+
+      <h2>Limitations</h2>
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Know the boundaries before you demo</span>
+        <p>Transfers are <strong>one at a time</strong> — there is <strong>no mass transfer</strong> yet (logged as a future enhancement). There is <strong>no approval process</strong> on transfers; a transfer simply executes when the scheduled date hits (approvals on transfers were also logged as a good future enhancement). And transfers are scheduled at the <strong>month level</strong>, not the day level.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-lab-positions.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-lab-position-transfer.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

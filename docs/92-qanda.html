@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&amp;A from Sessions — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Q&amp;A from Sessions</h1>
+      <p class="subtitle">Questions partners raised, with the answers given</p>
+      <div class="badge-row">
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>These are real questions raised by delivery partners during the two OWP sessions, with the answers given at the time. They're grouped by theme so you can find the relevant one when it comes up on a real engagement. Participant names have been removed.</p>
+
+      <h2>Delivery &amp; Methodology</h2>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked how to tackle sample data that's dirty, or data the customer can't provide.</strong></p>
+        <p><strong>A:</strong> The customer must provide it eventually. In pre-project, identify what they can and can't provide, then work with the data team during configuration. Some data is mandatory because app nodes and processes use it; some isn't. You can start without 100% of the data, but <em>"as far as this data is not provided… some part of the app will not be functional."</em></p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked why they fill in templates instead of having Anaplan connect straight to SuccessFactors and do the ETL.</strong></p>
+        <p><strong>A:</strong> You can — but that's a separate service and one of the most-used extensions, not part of the app. The app just needs data in the template structure so the import action works. Do the proper integration after the app is running and the required data is proven.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether the apps are built with integration in mind.</strong></p>
+        <p><strong>A:</strong> Yes. The plan is to move every app to ADO (Anaplan Data Orchestrator) as the central inbound conduit.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether selective-access changes and added hierarchy levels survive upgrades.</strong></p>
+        <p><strong>A:</strong> Selective access is generally safe to change after setup. Adding a level inside an existing hierarchy that selective access depends on is riskier — discuss that one with Anaplan before you do it.</p>
+      </div>
+
+      <h2>COE &amp; Fit</h2>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked what the role of a COE is when you're delivering packaged apps.</strong></p>
+        <p><strong>A:</strong> Apps aren't self-sustaining, so the COE shifts from building to managing — users, new reports, formula and cost changes, year-over-year rollovers, and extensions. The value is the time saved not building roughly 1,000 modules, around 130 UX pages, and a data hub. As the presenter put it: <em>"no COE wants to spend time building a data hub."</em></p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: On the 60/40 fit, a participant asked how often you tell customers to accept it versus change their process.</strong></p>
+        <p><strong>A:</strong> Most app buyers want best practice, and OWP implementations go hand-in-hand with process change — for example, stop creating planned positions in Workday and do it in Anaplan instead. Some things simply can't be done because of platform limits, and re-architecting can break the app. The cautionary tale here: a detailed contractor capability built inside OWP should have been a separate model.</p>
+      </div>
+
+      <h2>CPP, Transfers &amp; Security</h2>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether you can mass-transfer positions.</strong></p>
+        <p><strong>A:</strong> No — transfers are one at a time. Mass transfers are a future enhancement. You can only transfer positions and orgs you have access to.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether there's an approval process for transfers.</strong></p>
+        <p><strong>A:</strong> No — a transfer executes when its scheduled date hits. Approvals for transfers have been logged as a good future enhancement.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked what to do when you need to transfer to an org you don't have access to.</strong></p>
+        <p><strong>A:</strong> Modify the access, or have a higher-access user do the transfer. This is one of the reasons approvals would be the better path.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked why there isn't an approval queue for creating or requesting positions.</strong></p>
+        <p><strong>A:</strong> A queue needs someone to manage it. Instead, Workflow routes requests directly to the right person or their delegates. (A queue does exist for editing plan and requested positions.)</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked about batch approvals.</strong></p>
+        <p><strong>A:</strong> Batch approvals for Workflow shipped about 1.5 weeks ago — you can approve around 20 at once. It's not yet incorporated into the app, but that's expected soon.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether granting selective access to a flat org cascades to positions.</strong></p>
+        <p><strong>A:</strong> Yes. In 2.1 the security hub builds a hierarchical view and cascades access to the underlying orgs and all aligned positions. It works from the budget-hierarchy side too.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether an upgrade or ALM will overwrite selective-access changes.</strong></p>
+        <p><strong>A:</strong> <em>"It shouldn't"</em> — builders don't modify selective access, so an upgrade wouldn't overwrite it unless it's changed on Anaplan's end. A nuance about where security is implemented (dev vs. UAT, ALM to UAT) was logged as a question to the product framework team.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether you can copy security access from one user to another.</strong></p>
+        <p><strong>A:</strong> There's no dedicated "copy from user to user" button, but you can copy and paste the access rows to another user and push to the models. It works across all models.</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked whether you can create new job levels in OWP.</strong></p>
+        <p><strong>A:</strong> No — job levels are foundational. Create them in Workday/HCM and bring them into OWP.</p>
+      </div>
+
+      <h2>Optimizer &amp; Foundation</h2>
+
+      <div class="callout-note">
+        <p><strong>Q: On the Optimizer, a participant asked what the variable would be — cost?</strong></p>
+        <p><strong>A:</strong> It's not fully decided. It could be cost or skill-fit, and it needs a weighting module. Optimizer is an extension, on Classic today, with Polaris targeted by end of year (roadmap, under safe harbor).</p>
+      </div>
+
+      <div class="callout-note">
+        <p><strong>Q: A participant asked about project, skills, and visa-type staffing.</strong></p>
+        <p><strong>A:</strong> That points to PRP (Project Resource Planning) and to OWP-as-a-foundation — the normalized OWP data feeds PRP, which is the pointer for those staffing questions.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./91-foundation.html">← Previous</a>
+        <a class="prevnext-btn" href="./93-resources.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

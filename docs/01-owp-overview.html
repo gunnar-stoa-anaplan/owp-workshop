@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What OWP Is — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>What OWP Is</h1>
+      <p class="subtitle">Position management, the two halves, and the closed loop</p>
+      <div class="badge-row">
+        <span class="content-badge">Getting Started</span>
+        <span class="content-badge">Foundation</span>
+        <span class="content-badge">15 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="tsd-banner">
+        <div class="tsd-step tsd-step-tell">
+          <span class="tsd-step-label">📖 Tell</span>
+          <span class="tsd-step-heading">What OWP Is</span>
+          <span class="tsd-step-desc">A pre-built app for position-level workforce planning — its two halves, the closed loop, and the position lifecycle.</span>
+        </div>
+        <div class="tsd-step tsd-step-show">
+          <span class="tsd-step-label">👁 Show</span>
+          <span class="tsd-step-heading">Where the Pieces Live</span>
+          <span class="tsd-step-desc">How WFB, the CPP, and the management org fit together, and how the APID ties a position across every system.</span>
+        </div>
+        <div class="tsd-step tsd-step-do">
+          <span class="tsd-step-label">✅ Do</span>
+          <span class="tsd-step-heading">Frame the Fit</span>
+          <span class="tsd-step-desc">Be able to say, in a customer conversation, whether OWP is the right shape for how they plan.</span>
+        </div>
+      </div>
+
+      <h2>A Pre-Built App, Not a Blank Model</h2>
+      <p><strong>OWP — Operational Workforce Planning</strong> — is a pre-built Anaplan app, part of the apps suite alongside IFP, Supply Chain, and T&amp;Q. It is delivered as a working application, not built from a blank model. The version discussed in this workshop is <strong>2.1</strong>. (A <strong>2.0</strong> model was used for one demo because it had a "better data set.")</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Version Context</span>
+        <p>Where screens or behavior are described, assume <strong>2.1</strong> unless noted. The 2.0 model appears in one demo only, for its data set — not because the functionality differs in a way that matters here.</p>
+      </div>
+
+      <h2>Planning at Position and Employee Level</h2>
+      <p>OWP is built on <strong>position management</strong> as the best-practice approach to workforce planning. You plan at both the position and the employee level:</p>
+      <div class="callout-tip">
+        <span class="callout-label">💡 In the presenter's words</span>
+        <p>"You have employee, you have position, you plan empty position, and then you assign employees."</p>
+      </div>
+      <p>Data is planned "as a position, employee, location, job role, legal [entity]." You create the empty position first, then assign an employee to fill it — that ordering is the core of how the app thinks about the workforce.</p>
+
+      <h2>The Two Halves of the Application</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>WFB — Workforce Budgeting</h3>
+          <p>The budgeting side of OWP. This is where budgeted and planned positions are created, before they sync into the operational plan.</p>
+        </div>
+        <div class="card">
+          <h3>CPP — Continuous Position Plan</h3>
+          <p>The dynamic, day-to-day operational side — a live view of the organization used by HR, Finance, and talent.</p>
+        </div>
+      </div>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Watch the Slide Label</span>
+        <p>The slides mislabel the CPP as "continuous forecast." The presenter corrected this repeatedly: <em>"it says continuous forecast, but it's the continuous position plan."</em> When you present, call it the Continuous Position Plan.</p>
+      </div>
+
+      <h2>The Closed Loop: Plan to Hire</h2>
+      <p>The problem OWP solves is the disconnect between planning and hiring. Finance does the budget, HR plans positions, and talent recruits — and normally these run separately, with communication between them taking months.</p>
+      <div class="callout-note">
+        <span class="callout-label">📝 The core gap</span>
+        <p>"No link between what we're planning, what we're actually budgeting for, and what's actually getting recruited for."</p>
+      </div>
+      <p>OWP closes that loop by linking the plan, the budget, and the recruiting into one system. Anaplan implemented OWP internally to solve exactly this problem.</p>
+
+      <h2>The Position Lifecycle</h2>
+      <p>A position moves through the systems as a single, traceable thing:</p>
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content"><strong>Create the position in OWP</strong> — the position is planned inside Anaplan.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content"><strong>Export to HCM</strong> — the position is pushed to the HCM system (Workday in the example).</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content"><strong>Filled by a worker</strong> — the position is filled in the HCM system.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content"><strong>Actuals flow back</strong> — actuals return to OWP, so the full history is visible: who filled a role over time, compensation over time, and moves.</div>
+      </div>
+
+      <p>Positions carry a state through this lifecycle:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Filled</strong></td><td>A worker occupies the position.</td></tr>
+            <tr><td><strong>Planned</strong></td><td>The position is planned but not yet open for hiring.</td></tr>
+            <tr><td><strong>Open</strong></td><td>The position is open to be filled.</td></tr>
+            <tr><td><strong>Closed</strong></td><td>The position is closed.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>The APID — the Golden Key</h2>
+      <div class="callout-tip">
+        <span class="callout-label">💡 What holds it together</span>
+        <p>The <strong>APID (Anaplan ID)</strong> is "the thing that keeps all of this together."</p>
+      </div>
+      <p>The APID is a code assigned when a position is created in OWP. It is written back into the HCM system as a field, and it becomes the key that follows the position through every system for the whole lifecycle. Because the APID travels with the position, actuals and history can always be reconciled back to the position that was planned.</p>
+
+      <h2>The Management Org</h2>
+      <p>The <strong>management org</strong> (supervisory org) is central to how OWP is built:</p>
+      <div class="callout-note">
+        <span class="callout-label">📝 Half the application</span>
+        <p>"Half of the application is built off of this concept of management org."</p>
+      </div>
+      <p>Customers that have no supervisory-org concept can still use OWP, but they have to be taught it, and it has to be built with them. It is not optional structure you can skip — it underpins a large part of the app.</p>
+
+      <h2>The Hard Fit Limit</h2>
+      <div class="callout-important">
+        <span class="callout-label">🚨 Position-level planning is non-negotiable</span>
+        <p>If a customer refuses to plan at the position level and wants employee-only planning, "the app is very far from their needs." This is a fundamental mismatch, not something an extension can bridge. Surface it early — it is a fit question, not a scoping question.</p>
+      </div>
+
+      <div class="callout-do">
+        <span class="callout-label">✅ Do — Qualify the Fit</span>
+        <p>Before you go deep on OWP with a customer, confirm they are willing to plan at the position level and that they either have, or will build, a management-org concept. If either is missing, raise it now — it shapes whether OWP is the right app at all.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./00-tenant-access.html">← Previous</a>
+        <a class="prevnext-btn" href="./02-app-led-delivery.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

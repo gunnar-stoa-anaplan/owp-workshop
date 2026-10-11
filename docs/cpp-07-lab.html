@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Explore the CPP — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Explore the CPP</h1>
+      <p class="subtitle">A guided hands-on tour of the plan and its actions</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Hands-On</span>
+        <span class="content-badge">30 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📝 How this lab works</span>
+        <p>This is a guided exploration of your own OWP training tenant — there is no scripted dataset to follow step-by-step. Navigate your tenant's Continuous Position Plan (CPP), try each action described below, and observe what happens. Persona and number examples (Dorothy, Nisha, the $78k&rarr;$80k costing) are drawn from the workshop recordings so you know what to look for; your tenant's data will differ.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Navigate the <strong>position plan grid</strong> and read its columns — filled positions, worker names, org, cost center, costs, and location</li>
+          <li>Open a <strong>worker card</strong> and note the KPIs and the <strong>compa-ratio</strong></li>
+          <li>Use <strong>"start anywhere, go everywhere"</strong> to open a <strong>job profile</strong> (skills, proficiency, critical-skill) and drill into an <strong>org</strong></li>
+          <li>Try the <strong>create-position</strong> action and fine-tune a fully-loaded cost</li>
+          <li>Attempt a <strong>position transfer</strong> and a <strong>worker transfer</strong>, and set the backfill-vs-close flag</li>
+          <li>Run a <strong>skills match</strong> and tune the match threshold</li>
+        </ul>
+      </div>
+
+      <h2>1 — Navigate the position plan grid</h2>
+      <p>The CPP is the dynamic, day-to-day view of the organization — hires, transfers, promotions, backfills, all linked to finance. Start by getting oriented in the grid.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, open the Continuous Position Plan (CPP).</strong></p>
+        <p>Find the position plan grid. Scan the columns and identify each one before touching any action.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Identify which positions are <strong>filled</strong> versus <strong>planned</strong>, and read the worker names against the filled ones.</li>
+        <li>Locate the columns for <strong>org</strong>, the associated <strong>cost center</strong>, the mappings, the <strong>costs</strong>, and the <strong>location</strong>.</li>
+        <li>Find where each plan position was created — <strong>forecast</strong> versus <strong>budget</strong>.</li>
+        <li>Notice the split between <strong>Plan actions</strong> (create a position, create many, edit in bulk, transfer positions, transfer workers, worker departures) and <strong>Analytics</strong>.</li>
+      </ol>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Tip</span>
+        <p>OWP plans by <strong>position</strong> (filled / planned / open / closed) rather than by headcount. This position-level view is the best-practice approach the whole app is built on — the grid is where it becomes concrete.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>What is the <strong>APID (Anaplan ID)</strong>, and what does it do?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-apid" value="A"><span class="lab-quiz-letter">A</span><span>A performance rating assigned to each worker in the CPP</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-apid" value="B"><span class="lab-quiz-letter">B</span><span>The compa-ratio calculated on the worker card</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-apid" value="C"><span class="lab-quiz-letter">C</span><span>A code assigned when a position is created in OWP, written back to the HCM system, that follows the position through every system for its whole lifecycle</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-apid" value="D"><span class="lab-quiz-letter">D</span><span>The budget hierarchy level a plan position maps to</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> The APID is "the thing that keeps all of this together" — assigned at position creation in OWP, written back into the HCM system as a field, and used as the key that follows the position through every system for the entire lifecycle (create &rarr; export to HCM &rarr; filled &rarr; actuals flow back).</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. The APID (Anaplan ID) is the code assigned when a position is created in OWP, written back into the HCM system, and it follows the position through every system for its whole lifecycle. Compa-ratio, performance rating, and budget-hierarchy mapping are separate concepts.</div>
+      </div>
+
+      <h2>2 — Open a worker card and read the KPIs</h2>
+      <p>Filled positions have a worker behind them. The worker card surfaces the KPIs the customer chose to expose.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, click into a filled position to open its worker card.</strong></p>
+        <p>On the recordings this was Dorothy (San Francisco) — in your tenant use whichever worker you land on.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Note the standard KPIs: <strong>tenure</strong>, <strong>position</strong>, and <strong>location</strong>.</li>
+        <li>Find the compensation breakout and the <strong>compa-ratio</strong>.</li>
+        <li>Check whether a <strong>performance rating</strong> is shown (it appears only if that data was loaded).</li>
+        <li>Notice the optional demographic KPIs (gender, generational distribution, race, ethnicity) — these are a per-customer DEI toggle, defaulted to "unlisted" or removed when the customer declines.</li>
+      </ol>
+
+      <h2>3 — Start anywhere: job profile and org drill</h2>
+      <p>The links at the top of the CPP let you jump from any object to a related one — "start anywhere, go everywhere."</p>
+
+      <blockquote>
+        <p><strong>In your tenant, use the start-anywhere links to open a job profile, then drill into an org.</strong></p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Open a <strong>job-level detail page</strong>. Note the job level details, which orgs have this job, and the workers across the org who hold it.</li>
+        <li>On the same page, find the <strong>required skills</strong>, the <strong>proficiency level</strong>, and whether each skill is flagged as a <strong>critical skill</strong>.</li>
+        <li>Pivot to an <strong>org</strong> (on the recordings, the AR / accounts-receivable org). Note its filled positions, the workers and locations, and the <strong>org-chart</strong> widget.</li>
+        <li>From the org, notice you can create a position or depart a worker without leaving the page.</li>
+      </ol>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Why the org list is flat</span>
+        <p>The management / supervisory org list is kept <strong>flat</strong> because a person can live at an upper level and also in orgs below it. The hierarchy is reconstructed in the back end for aggregation and security — worth remembering when you configure selective access later.</p>
+      </div>
+
+      <h2>4 — Create a position and fine-tune the cost</h2>
+      <p>The CPP allows more precise, negotiation-aware costing than the budget side. Try the create-position action and adjust a fully-loaded cost.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, open Plan actions and start "create a position."</strong></p>
+        <p>Recording example: a sales rep with an out-of-the-box fully-loaded assumption of <strong>$78,000</strong>.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Start a new position and note the out-of-the-box fully-loaded cost assumption ($78,000 in the example).</li>
+        <li>Fine-tune it: add a <strong>10% annual bonus</strong> and reduce base by $5,000 (to <strong>$75,000</strong>). In the example this yields a <strong>~$7,300</strong> annual bonus and the position created at <strong>~$80,000</strong> instead of the $78k baseline.</li>
+        <li>Watch for <strong>guardrails via dynamic text</strong> rather than hard errors — e.g. "you don't have write access" or "your time to hire is too short for creating a position."</li>
+        <li>Also look at <strong>create many positions</strong> and <strong>edit plan positions</strong> (bulk) in Plan actions.</li>
+      </ol>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 No approval queue for creating positions</span>
+        <p>There is no approval <em>queue</em> for creating positions — <strong>Workflow</strong> routes requests to the right person instead. A queue does exist when editing plan / requested positions.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>In the costing example, base is reduced to $75,000 and a 10% annual bonus is added, producing a position created at <strong>~$80,000</strong> instead of the $78k baseline. What is this meant to show?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-cost" value="A"><span class="lab-quiz-letter">A</span><span>That the CPP always increases costs above the budget assumption</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-cost" value="B"><span class="lab-quiz-letter">B</span><span>That the CPP allows more precise, negotiation-aware costing than the budget side</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-cost" value="C"><span class="lab-quiz-letter">C</span><span>That fully-loaded costs cannot be changed once a position is created</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-cost" value="D"><span class="lab-quiz-letter">D</span><span>That bonuses are fixed at a flat $7,300 for every sales rep</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> The point of the $78k&rarr;$80k walkthrough is that the CPP lets you refine a fully-loaded cost — adjust base, add a bonus — to reflect the actual, negotiation-aware number rather than the coarser budget-side assumption.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. The example shows the CPP enabling more precise, negotiation-aware costing than the budget side — the cost can go up or down, is not locked after creation, and the ~$7,300 bonus is derived from the 10% assumption, not a flat figure.</div>
+      </div>
+
+      <h2>5 — Transfer a position and a worker</h2>
+      <p>Transfers move positions or workers between orgs on a scheduled date. Try both, and pay attention to the backfill-vs-close decision.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, try a position transfer, then a worker transfer.</strong></p>
+        <p>Recording examples: Benjamin Rose (position transfer) and Yumiko, a senior hardware engineer in London (worker transfer).</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li><strong>Position transfer:</strong> move a position from one org to another. Enter a <strong>reason</strong> and set a <strong>schedule date</strong> — note that transfers are scheduled at the <strong>month level</strong>, not day level. Observe the impact on both source and destination org.</li>
+        <li>Try the <strong>cost-center override</strong>: transfer to an org but align the cost to a different cost center (the recording aligned to "Field Sales EMEA" instead of the default "outside sales").</li>
+        <li><strong>Worker transfer:</strong> search all planned/open positions filtered by a skill or title (the example filtered to "hardware") and pick a destination role for the worker.</li>
+        <li>Set the <strong>backfill vs. close</strong> flag on the vacated position — it flips to <strong>open</strong> (backfill) or <strong>closed</strong> (close) on the scheduled date.</li>
+      </ol>
+
+      <div class="callout-important">
+        <span class="callout-label">🚨 Transfer limitations</span>
+        <p>Transfers are <strong>one at a time</strong> — there is no mass transfer yet (a future enhancement). There is <strong>no approval process</strong> on transfers; a transfer simply executes when its date hits. Approvals on transfers are logged as a good future enhancement.</p>
+      </div>
+
+      <div class="lab-check" data-check-id="explore-cpp-plan-and-actions" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've navigated the grid, opened a worker card, drilled a job profile and an org, created a position, and run both a position and a worker transfer, click below to verify.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">CPP exploration complete.</p>
+          <ul class="lab-check-list">
+            <li><strong>Position plan grid read</strong> &rarr; filled vs planned, org, cost center, costs, location, and forecast-vs-budget origin identified</li>
+            <li><strong>Worker card opened</strong> &rarr; tenure, position, location, and the compa-ratio noted</li>
+            <li><strong>Start-anywhere used</strong> &rarr; a job profile (skills, proficiency, critical-skill) opened and an org drilled</li>
+            <li><strong>Position created</strong> &rarr; fully-loaded cost fine-tuned ($78k&rarr;$80k example), dynamic-text guardrails observed</li>
+            <li><strong>Transfers run</strong> &rarr; a position transfer with a reason and month-level schedule date, and a worker transfer with the backfill-vs-close flag set</li>
+          </ul>
+          <p class="lab-check-next">Next up: run a skills match and tune the threshold, then head to the debrief.</p>
+        </div>
+      </div>
+
+      <h2>6 — Run a skills match and tune the threshold</h2>
+      <p>Skills matching finds workers whose skills fit a role. Out of the box it is a manual process, and the threshold usually needs lowering.</p>
+
+      <blockquote>
+        <p><strong>In your tenant, run a skills match against a set of skills and adjust the match threshold.</strong></p>
+        <p>Recording example: searching on accounts payable, financial analysis, financial modeling, and planning.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Search workers by a set of skills and start with the match threshold at <strong>75%</strong> — likely too high, returning too few results.</li>
+        <li>Lower it to <strong>50%</strong>, then to <strong>25%</strong> — in the example, 25% gave the best results.</li>
+        <li>Drill into a matched worker (the example used Jennifer Hills) to check role, tenure, and performance.</li>
+        <li>Look at a job with a <strong>critical skill</strong> (the example was General Counsel with regulatory compliance) — this illustrates a future weighting module.</li>
+      </ol>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Skills data is dirty</span>
+        <p>Skills data is very dirty — "you have people that spell planning with four N's." That, plus matching being a manual process out of the box, is why the threshold usually has to be lowered to surface real matches.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="A">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Why does the match threshold typically have to be lowered from 75% toward 25% to get useful results?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-threshold" value="A"><span class="lab-quiz-letter">A</span><span>Skills data is very dirty (inconsistent spellings, etc.) and matching is manual out of the box, so a high threshold returns too few matches</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-threshold" value="B"><span class="lab-quiz-letter">B</span><span>The threshold controls the fully-loaded cost of matched positions</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-threshold" value="C"><span class="lab-quiz-letter">C</span><span>A lower threshold is required before a position can be transferred</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-cpp-threshold" value="D"><span class="lab-quiz-letter">D</span><span>The Optimizer weighting module forces the threshold down automatically</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Because skills data is dirty (e.g. "planning" spelled with four N's) and matching is a manual out-of-the-box process, a strict 75% threshold surfaces too few candidates — lowering it toward 25% widens the net enough to find real matches.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>A</strong>. The threshold is lowered because skills data is very dirty and matching is manual out of the box, so a high threshold returns too few results. It has nothing to do with cost, transfers, or the Optimizer, which is a separate (roadmap) extension.</div>
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You opened a worker card that showed a compa-ratio but no performance rating. What does that tell you about the customer's data readiness, and how would you explain it?</li>
+        <li>When you fine-tuned the fully-loaded cost from $78k to $80k, what did the CPP let you do that the budget side does not? When would a customer want this?</li>
+        <li>On a worker transfer you set the vacated position to backfill (open) rather than close. Walk through what happens on the scheduled date for each choice, and who cares about the difference.</li>
+        <li>Your skills match returned nothing at 75% and good results at 25%. What is really going on, and what would you tell a customer who expects clean matching out of the box?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-03-workspace.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-04-positions.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

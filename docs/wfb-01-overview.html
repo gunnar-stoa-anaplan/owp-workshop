@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workforce Budgeting (WFB) — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Workforce Budgeting (WFB)</h1>
+      <p class="subtitle">The budgeting half of OWP — budgeted positions and the budget hierarchy</p>
+      <div class="badge-row">
+        <span class="content-badge">WFB</span>
+        <span class="content-badge">Overview</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>OWP has two halves. <strong>WFB (Workforce Budgeting)</strong> is the budgeting side, where budgeted and planned positions are created. <strong>CPP (Continuous Position Plan)</strong> is the dynamic, day-to-day operational side. This page covers what WFB is and how it feeds the CPP. The full WFB walkthrough was not captured on the recordings — see the note at the end of this page.</p>
+
+      <h2>Where WFB sits in OWP</h2>
+      <p>WFB is where the budget takes shape. It is the place budgeted positions are planned before they become part of the live plan. Once the budget is closed, those positions are pushed into the CPP, which then becomes the operational view HR, Finance, and Talent work from day to day.</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>WFB — Workforce Budgeting</h3>
+          <p>The budgeting half. Budgeted and planned positions are created here, organized against a budget hierarchy, and worked in iterations until the budget is closed.</p>
+        </div>
+        <div class="card">
+          <h3>CPP — Continuous Position Plan</h3>
+          <p>The dynamic, day-to-day half. Once a budget iteration is synced across, the CPP holds the live view of the organization — hires, transfers, and movement over time.</p>
+        </div>
+      </div>
+
+      <h2>Budgeted and planned positions</h2>
+      <p>WFB is built on position management, the same best-practice foundation as the rest of OWP. Rather than planning by headcount, you plan positions — empty ones you budget for and expect to fill. These budgeted positions are what eventually flow into the CPP and, from there, out to the HCM system to be recruited against.</p>
+
+      <h2>The budget hierarchy</h2>
+      <p>Budgeting in WFB is organized against a <strong>budget hierarchy (BH)</strong> — the built-in <strong>5-level</strong> hierarchy that ships with the app. You do not need a fully designed hierarchy at the outset.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Start with dummy levels</span>
+        <p>The 5-level budget hierarchy can be started with dummy levels. Use them to get the app running, then remove the levels you do not need later, in the extension phase. You do not have to reconcile the customer's full structure before you can begin.</p>
+      </div>
+
+      <h2>Iterations and the baseline</h2>
+      <p>Budget work happens in <strong>iterations</strong>. A common example is a <strong>"baseline"</strong> iteration — a version of the budget that gets refined and then, once agreed, pushed forward. Working in iterations lets the budget be reviewed and adjusted before it is committed to the plan.</p>
+
+      <h2>Pushing the budget into the CPP</h2>
+      <p>Once a budget iteration is closed, it is <strong>pushed and synchronized into the CPP</strong>. This is the moment the budgeted positions become part of the live plan. The mechanics of that sync — the grid, the impact preview, and the admin action — are covered on the next page, the WFB → CPP Bridge.</p>
+
+      <h2>Finance granularity connects to IFP</h2>
+      <p>Finance cares about the <strong>granularity</strong> of the budget hierarchy because it is what connects OWP to the finance app (IFP). Getting the right level of budget detail is part of the config discussion with Finance, so the budget lines up with how they plan on the finance side.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Pending SME Input</span>
+        <p>[PENDING SME input] <em>The full WFB walkthrough was not captured on the workshop recordings. The screens, the step-by-step budgeting flow, and the detailed hierarchy setup will be added once the SME material is available. This page covers only what is confirmed from the recorded sessions.</em></p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./07-integration-architecture.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-01-overview.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

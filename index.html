@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OWP Delivery Partner Workshop — Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Mobile header -->
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar"></nav>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <div class="index-hero">
+      <h1>Operational Workforce Planning (OWP)</h1>
+      <p>Delivery Partner Enablement Workshop</p>
+      <p>App-Led Delivery &nbsp;·&nbsp; Workforce Budgeting &nbsp;·&nbsp; Continuous Position Plan &nbsp;·&nbsp; Security &amp; Access</p>
+    </div>
+    <div class="content-body">
+      <h2>Welcome</h2>
+      <p>This lab guide accompanies the <strong>Operational Workforce Planning (OWP) Delivery Partner Workshop</strong> — a technical enablement program for Anaplan delivery practitioners who will implement, extend, and support the OWP application. OWP is a pre-built Anaplan app that plans the workforce at the <strong>position and employee</strong> level and closes the loop between finance budgeting, HR position planning, and talent acquisition.</p>
+      <p>The workshop has two halves. <strong>Delivering OWP</strong> covers the app-led delivery methodology — how you take a pre-built app from data load to a running, extended solution. <strong>The OWP Application</strong> tours what the app does: Workforce Budgeting (WFB), the Continuous Position Plan (CPP), and the security and selective-access model. Start with the <a href="./docs/00-overview.html">Workshop Overview</a> to understand the structure and objectives.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Source &amp; Status</span>
+        <p>This guide is built from the two OWP workshop recordings (delivery methodology and the CPP deep dive). A few segments referenced in the sessions but not captured on the recordings — the WFB budgeting walkthrough, the OWP architecture / PATH detail, and the org-modeling / RIF / hiring-freeze demo — are marked <strong>[PENDING SME input]</strong> where they appear. Confirm any product detail against the current app before using it with a customer.</p>
+      </div>
+
+      <h2>Workshop Sections</h2>
+
+      <h3 style="margin-top:1.5rem;margin-bottom:0.5rem;color:#1e3a5f;">Getting Started</h3>
+      <div class="index-nav-grid">
+        <a class="index-nav-card" href="./docs/00-overview.html">
+          <div class="inc-num">Start Here</div>
+          <div class="inc-title">Workshop Overview</div>
+          <div class="inc-desc">Structure, objectives, audience, and how to work through the guide</div>
+        </a>
+        <a class="index-nav-card" href="./docs/00-case-study.html">
+          <div class="inc-num">Case Study</div>
+          <div class="inc-title">Northwind Global</div>
+          <div class="inc-desc">The fictional customer used by the delivery labs — profile, data, and scope</div>
+        </a>
+        <a class="index-nav-card" href="./docs/00-tenant-access.html">
+          <div class="inc-num">Setup</div>
+          <div class="inc-title">Tenant Access &amp; Prerequisites</div>
+          <div class="inc-desc">Partner workspace access, logins, and what to have ready</div>
+        </a>
+        <a class="index-nav-card" href="./docs/01-owp-overview.html">
+          <div class="inc-num">Foundation</div>
+          <div class="inc-title">What OWP Is</div>
+          <div class="inc-desc">Position management, WFB vs CPP, the closed-loop plan-to-hire problem, and the APID</div>
+        </a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;margin-bottom:0.5rem;color:#0066cc;">🚀 Delivering OWP — App-Led Methodology</h3>
+      <div class="index-nav-grid">
+        <a class="index-nav-card" href="./docs/02-app-led-delivery.html">
+          <div class="inc-num">Method · 1</div>
+          <div class="inc-title">App-Led Delivery</div>
+          <div class="inc-desc">Traditional vs. app-led delivery; load → set → customize</div>
+        </a>
+        <a class="index-nav-card" href="./docs/03-delivery-lifecycle.html">
+          <div class="inc-num">Method · 2</div>
+          <div class="inc-title">The Delivery Lifecycle</div>
+          <div class="inc-desc">Pre-project, configuration, test/extension paths, extension delivery</div>
+        </a>
+        <a class="index-nav-card" href="./docs/04-data-templates.html">
+          <div class="inc-num">Method · 3</div>
+          <div class="inc-title">Data Templates &amp; Readiness</div>
+          <div class="inc-desc">Template tabs, mandatory fields, dirty HR data, zombie positions</div>
+        </a>
+        <a class="index-nav-card" href="./docs/04-lab-data-readiness.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Data Readiness Assessment</div>
+          <div class="inc-desc">Decide whether Northwind is ready to start — go/no-go on the data</div>
+        </a>
+        <a class="index-nav-card" href="./docs/04-lab-template-mapping.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Map the HR Extract</div>
+          <div class="inc-desc">Map a messy Workday export to the OWP templates and find the problems</div>
+        </a>
+        <a class="index-nav-card" href="./docs/05-extensions-vs-core.html">
+          <div class="inc-num">Method · 4</div>
+          <div class="inc-title">Extensions vs. Core Changes</div>
+          <div class="inc-desc">Add don't change, upgradeability, the PATH framework, the Delivery Advisor</div>
+        </a>
+        <a class="index-nav-card" href="./docs/06-delivery-timeline.html">
+          <div class="inc-num">Method · 5</div>
+          <div class="inc-title">Delivery Timeline</div>
+          <div class="inc-desc">Week-by-week timeline — and why to double it</div>
+        </a>
+        <a class="index-nav-card" href="./docs/07-integration-architecture.html">
+          <div class="inc-num">Method · 6</div>
+          <div class="inc-title">Integration &amp; Architecture</div>
+          <div class="inc-desc">ADO, the UDM roadmap, closed-loop export, and HCM systems</div>
+        </a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;margin-bottom:0.5rem;color:#0066cc;">💰 Workforce Budgeting (WFB)</h3>
+      <div class="index-nav-grid">
+        <a class="index-nav-card" href="./docs/wfb-01-overview.html">
+          <div class="inc-num">WFB</div>
+          <div class="inc-title">WFB Overview</div>
+          <div class="inc-desc">Budget hierarchy, budgeted positions, and planning iterations</div>
+        </a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;margin-bottom:0.5rem;color:#0066cc;">🔄 Continuous Position Plan (CPP)</h3>
+      <div class="index-nav-grid">
+        <a class="index-nav-card" href="./docs/cpp-01-overview.html">
+          <div class="inc-num">CPP · 1</div>
+          <div class="inc-title">CPP Overview</div>
+          <div class="inc-desc">The dynamic org view, roles, the position lifecycle, and the closed loop</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-02-wfb-bridge.html">
+          <div class="inc-num">CPP · 2</div>
+          <div class="inc-title">WFB → CPP Bridge</div>
+          <div class="inc-desc">Sync budgeted positions into the CPP with an impact preview</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-03-workspace.html">
+          <div class="inc-num">CPP · 3</div>
+          <div class="inc-title">The CPP Workspace</div>
+          <div class="inc-desc">Position-plan grid, worker cards, and job-profile / management-org drill</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-07-lab.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Explore the CPP</div>
+          <div class="inc-desc">Guided hands-on tour of the CPP and its plan actions in your tenant</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-04-positions.html">
+          <div class="inc-num">CPP · 4</div>
+          <div class="inc-title">Create &amp; Edit Positions</div>
+          <div class="inc-desc">Create one or many positions, fine-tune fully-loaded cost, dynamic-text guardrails</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-lab-positions.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Create &amp; Cost a Position</div>
+          <div class="inc-desc">Create a position and fine-tune its fully-loaded cost in your tenant</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-05-transfers.html">
+          <div class="inc-num">CPP · 5</div>
+          <div class="inc-title">Position &amp; Worker Transfers</div>
+          <div class="inc-desc">Transfer positions and workers; backfill vs. close</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-lab-position-transfer.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Transfer a Position</div>
+          <div class="inc-desc">Move a position to a new org on a schedule, with a cost-center override</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-lab-worker-transfer.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Transfer a Worker</div>
+          <div class="inc-desc">Move a worker into an open position — backfill or close the vacated one</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-06-skills-matching.html">
+          <div class="inc-num">CPP · 6</div>
+          <div class="inc-title">Skills Matching</div>
+          <div class="inc-desc">Match threshold, dirty skills data, and finding internal candidates</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-lab-skills.html">
+          <div class="inc-num">Lab</div>
+          <div class="inc-title">Lab: Skills Matching</div>
+          <div class="inc-desc">Find internal candidates by skill and tune the match threshold</div>
+        </a>
+        <a class="index-nav-card" href="./docs/cpp-08-org-modeling.html">
+          <div class="inc-num">CPP · 7</div>
+          <div class="inc-title">Org Modeling, RIF &amp; Hiring Freeze</div>
+          <div class="inc-desc">Scenario org changes — reduction in force and hiring-freeze planning</div>
+        </a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;margin-bottom:0.5rem;color:#0066cc;">🔐 Security &amp; Access</h3>
+      <div class="index-nav-grid">
+        <a class="index-nav-card" href="./docs/sec-01-roles.html">
+          <div class="inc-num">Security · 1</div>
+          <div class="inc-title">User Roles &amp; Security Model</div>
+          <div class="inc-desc">Roles × features matrix and the UX page-security matrix</div>
+        </a>
+        <a class="index-nav-card" href="./docs/sec-02-selective-access.html">
+          <div class="inc-num">Security · 2</div>
+          <div class="inc-title">Selective Access</div>
+          <div class="inc-desc">Flat lists that cascade, the budget-hierarchy side, copy access, ALM nuance</div>
+        </a>
+        <a class="index-nav-card" href="./docs/sec-03-lab.html">
+          <div class="inc-num">Security · Lab</div>
+          <div class="inc-title">Lab: Configure Selective Access</div>
+          <div class="inc-desc">Guided hands-on — grant access and watch it cascade to positions</div>
+        </a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;margin-bottom:0.5rem;color:#1e3a5f;">Looking Ahead &amp; Reference</h3>
+      <div class="index-nav-grid">
+        <a class="index-nav-card" href="./docs/progress.html">
+          <div class="inc-num">📊 Progress</div>
+          <div class="inc-title">My Progress</div>
+          <div class="inc-desc">Track which hands-on labs you've completed</div>
+        </a>
+        <a class="index-nav-card" href="./docs/90-optimizer.html">
+          <div class="inc-num">Ahead</div>
+          <div class="inc-title">Optimizer &amp; Future Use Cases</div>
+          <div class="inc-desc">Span-of-control, skill concentration, weighting; Polaris timing</div>
+        </a>
+        <a class="index-nav-card" href="./docs/91-foundation.html">
+          <div class="inc-num">Ahead</div>
+          <div class="inc-title">OWP as a Foundation</div>
+          <div class="inc-desc">PRP, capacity and demand planning, and the agentic-CFO vision</div>
+        </a>
+        <a class="index-nav-card" href="./docs/92-qanda.html">
+          <div class="inc-num">Reference</div>
+          <div class="inc-title">Q&amp;A from Sessions</div>
+          <div class="inc-desc">Questions partners raised, with the answers given</div>
+        </a>
+        <a class="index-nav-card" href="./docs/93-resources.html">
+          <div class="inc-num">Reference</div>
+          <div class="inc-title">Resources &amp; Downloads</div>
+          <div class="inc-desc">Templates, solution guide, and reference material</div>
+        </a>
+        <a class="index-nav-card" href="./docs/94-wrap-up.html">
+          <div class="inc-num">Reference</div>
+          <div class="inc-title">Workshop Wrap-up</div>
+          <div class="inc-desc">What to do next and how to keep learning</div>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./js/nav.js"></script>
+  <script src="./js/progress.js"></script>
+</body>
+</html>

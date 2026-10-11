@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Overview — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>OWP Delivery Partner Workshop</h1>
+      <p class="subtitle">Operational Workforce Planning · App-led delivery · Workforce Budgeting · Continuous Position Plan</p>
+      <div class="badge-row">
+        <span class="content-badge">OWP</span>
+        <span class="content-badge">Self-Paced</span>
+        <span class="content-badge">Partner Enablement</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div style="background:#eff6ff;border-left:4px solid #0066cc;border-radius:0 6px 6px 0;padding:0.85rem 1.1rem;margin:1rem 0 1.25rem;">
+        <strong style="display:block;color:#1e3a5f;font-size:1rem;">📋 Step 1 — Take the pre-workshop survey</strong>
+        <p style="margin:0.35rem 0 0.6rem 0;color:#374151;">Two minutes. Tells us where you're starting from — your Anaplan background, whether you've delivered a pre-built app before, and what you most want to get out of the sessions — so we can calibrate the walkthroughs and follow-up resources.</p>
+        <a href="#" style="display:inline-block;background:#0066cc;color:white;text-decoration:none;padding:0.5rem 0.9rem;border-radius:4px;font-weight:600;font-size:0.9rem;">Take pre-workshop survey →</a>
+        <p style="margin:0.5rem 0 0 0;color:#64748b;font-size:0.8rem;"><em>[PENDING] Survey link to be added — ask your workshop facilitator.</em></p>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💬 You're Not Alone — Join the Workshop Channel</span>
+        <p>This workshop is self-paced — you work through the guide on your own schedule — but you're not on your own. A dedicated channel for workshop participants stays open — drop in any time, whether you're just getting started or deep into the labs: ask questions, share what you're stuck on, and see what others have asked. The OWP Delivery Advisor and product team monitor it.</p>
+        <p><strong>Workshop channel:</strong> <em>[PENDING] channel / invite to be confirmed.</em></p>
+      </div>
+
+      <h2>About This Workshop</h2>
+      <p>The <strong>OWP Delivery Partner Workshop</strong> is a technical enablement program for Anaplan delivery practitioners — Solutions Consultants, Solution Architects, and Technical Consultants — who will implement, extend, and support the <strong>Operational Workforce Planning (OWP)</strong> application for customers.</p>
+      <p>This is not a lecture series. It is a mix of methodology, application walkthroughs, guided hands-on exploration in your own training tenant, and Q&amp;A — designed to take you from <em>knowing about</em> OWP to being capable of <em>delivering, demoing, and scoping</em> it for real customers.</p>
+
+      <h3>What we assume you bring</h3>
+      <p>This workshop assumes you already understand what a pre-built Anaplan application is — and what it is not — and the general idea of the app-led delivery method. If your Anaplan background is in from-scratch model building, be aware that delivering a pre-built app is fundamentally different work. Loading data, configuring the app, and extending it carefully around the upgrade path are not shortcuts around custom modeling — they <em>are</em> the delivery method.</p>
+
+      <h3>What we will actually do</h3>
+      <p>We start with the <strong>delivery methodology</strong>: how you take a pre-built app from a signed deal, through data loading and configuration, to a running solution — and how to extend it without breaking the upgrade path. Then we tour <strong>the OWP application itself</strong>: Workforce Budgeting (WFB), the Continuous Position Plan (CPP), and the security and selective-access model. Where the workshop is hands-on, you work in your own training tenant, not on slides.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 OWP content reflects v2.1</span>
+        <p>The OWP content in this guide reflects the <strong>2.1</strong> generation of the app (one demo used a <strong>2.0</strong> model for a richer dataset). Screens and available features change release to release. Where you see OWP screenshots or specific behavior, confirm against the current product before using it with a customer.</p>
+      </div>
+
+      <h2>How the Workshop Is Organized</h2>
+      <p>The workshop has <strong>two pillars</strong>. The first teaches you how to <em>deliver</em> OWP; the second teaches you what the <em>application</em> does. The order matters — you scope and configure before you can confidently demo.</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>🚀 Pillar 1 — Delivering OWP</h3>
+          <p>The app-led delivery method: traditional vs. app-led delivery, the four-phase lifecycle, data templates and readiness, extensions vs. core changes, the delivery timeline, and the integration/architecture picture. This is the work that happens before a customer ever sees the app.</p>
+        </div>
+        <div class="card">
+          <h3>🔄 Pillar 2 — The OWP Application</h3>
+          <p>What the app produces: Workforce Budgeting (WFB), the Continuous Position Plan (CPP) — the workspace, plan actions, transfers, and skills matching — and the security and selective-access model. This is what you demo and support.</p>
+        </div>
+      </div>
+
+      <p>Within those pillars, sections follow a few repeating types. Knowing the type tells you how to engage with it:</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <strong>Overview</strong> — <em>Orient before you go deep</em><br>
+          A short, high-level answer to: what is this, who uses it, why does it matter? Context-setting, not a deep dive. Read actively and note questions.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <strong>Walkthrough</strong> — <em>See the app screen by screen</em><br>
+          A page-by-page tour of a part of the app, with screenshots from the workshop sessions. Open the app in your training tenant and follow along — navigate to the same screen, see the same fields.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <strong>Guided Lab</strong> — <em>Do it yourself in your tenant</em><br>
+          Hands-on exploration of your own OWP training tenant — navigate the CPP, run a plan action, configure selective access. Each lab has quick checks and a Check-my-Work step so you know you're on track.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <strong>Q&amp;A &amp; Reference</strong> — <em>Answers you'll come back to</em><br>
+          The questions partners actually raised, the roadmap and foundation context, and the resources you'll need in the field. Reference material — bookmark it.
+        </div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Some sessions weren't captured</span>
+        <p>This guide is built from the two workshop recordings. A few referenced segments — the WFB budgeting walkthrough, the OWP architecture / PATH detail, and the org-modeling / RIF / hiring-freeze demo — happened off-recording and are marked <strong>[PENDING SME input]</strong> where they appear.</p>
+      </div>
+
+      <h2>What This Workshop Intends to Accomplish</h2>
+      <p>By the end, you should be able to do three things without hesitation:</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <strong>Position OWP and run a delivery conversation</strong> — explain what OWP does, why position-level planning and the closed loop matter, and lead a discovery and data-readiness conversation. You know what data the app needs, what's mandatory, and what to ask for before kickoff.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <strong>Demo the application in a customer meeting</strong> — walk the CPP end to end (workspace, create/transfer positions, skills matching) and explain the WFB→CPP loop and the security model in business language. You can answer follow-up questions without going back to the Apps team.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <strong>Scope an engagement</strong> — look at a customer's requirements and know whether the base app handles them, whether configuration addresses them, or whether an extension is needed — and build that extension in a way that survives upgrades.
+        </div>
+      </div>
+
+      <h2>How to Think About Completing This Workshop</h2>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 The Right Mindset</span>
+        <p>Don't come to this workshop to watch. Come to do. The walkthroughs exist to prepare you for the guided labs and for real customer sessions — not to replace them. Log into your training tenant, follow along, and try the actions yourself. If you only read, you're only half here.</p>
+      </div>
+
+      <p>Here is how to engage with each section type:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Section Type</th><th>How to Engage</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Overview</strong> (Tell)</td>
+              <td>Read actively. Flag anything unclear. Write down questions — the Q&amp;A page and the workshop channel are where they get answered. Don't let ambiguity accumulate.</td>
+            </tr>
+            <tr>
+              <td><strong>Walkthrough</strong> (Show)</td>
+              <td>Open the app in your training tenant and follow along with the screenshots. Navigate to the same screen, confirm your understanding in real time. If your workspace looks different, ask in the channel.</td>
+            </tr>
+            <tr>
+              <td><strong>Guided Lab</strong> (Do)</td>
+              <td>Actually do the steps in your tenant. Use the quick checks and Check-my-Work to confirm you're on track. If something doesn't match, figure out why before moving on — this is where the learning happens.</td>
+            </tr>
+            <tr>
+              <td><strong>Debrief questions</strong></td>
+              <td>Don't skip them. They're the bridge between doing the steps and understanding <em>why</em>. If you can answer them confidently, you understood the section. If you can't, you executed it.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Why the Labs and Q&amp;A Matter</h2>
+      <p>The methodology and walkthroughs tell you what to look for. The guided labs and the questions are where it becomes durable knowledge.</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Labs Build Muscle Memory</h3>
+          <p>Reading about a position transfer is not the same as doing one. The CPP has a specific flow — plan actions, schedule dates, backfill-vs-close decisions — and specific ways to get it wrong. You need to feel that flow, not just know it exists.</p>
+        </div>
+        <div class="card">
+          <h3>Labs Surface Real Questions</h3>
+          <p>The questions that matter most — the ones that come up in customer sessions — only surface when you're doing the work. "What happens to the vacated position when a worker transfers out?" is a question you hit in the lab, not from reading about it.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Q&amp;A Is the Field Playbook</h3>
+          <p>The Q&amp;A page collects the real questions partners raised — on data, fit, extensions, transfers, and security — with the answers given. These are the exact objections and edge cases you'll meet with customers.</p>
+        </div>
+        <div class="card">
+          <h3>Completion Is a Signal</h3>
+          <p>Each guided lab has a Check-my-Work step and a debrief. If you can complete the actions and answer the debrief, you're ready. If you can't, you're not — regardless of how much of the guide you read.</p>
+        </div>
+      </div>
+
+      <h2>Desired Outcomes</h2>
+      <p>When you leave this workshop, the goal is that you can say — with evidence, not just confidence — that you're ready to support an OWP implementation. Specifically:</p>
+      <ul>
+        <li>✅ You can explain what OWP is, why it plans at position + employee level, and how it closes the plan-to-hire loop</li>
+        <li>✅ You can run a data-readiness conversation — what data OWP needs, what's mandatory, and what to ask the customer for</li>
+        <li>✅ You can describe the app-led delivery lifecycle and set a realistic timeline</li>
+        <li>✅ You can walk the CPP end to end — workspace, create/edit positions, transfers, and skills matching</li>
+        <li>✅ You can explain the WFB→CPP bridge and the security / selective-access model</li>
+        <li>✅ You can scope an extension and explain the upgrade-path risk of changing the core app</li>
+        <li>✅ You can position OWP as a foundation for PRP, capacity, and demand planning</li>
+      </ul>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 After the Workshop</span>
+        <p>This lab guide stays with you. Bookmark it. When you prepare for your first OWP engagement, the delivery-methodology and data-templates pages are where you'll start; when you demo, the CPP walkthroughs are your script; when a customer asks about fit or the roadmap, the Q&amp;A and foundation pages are here. Build the habit of using it now so it's second nature in the field.</p>
+      </div>
+
+      <h2>Learning Objectives</h2>
+      <p>By the end of this workshop, participants will be able to:</p>
+      <ol>
+        <li><strong>Position OWP</strong> — articulate what the app does, the two halves (WFB and CPP), the closed-loop plan-to-hire problem it solves, and where it fits the broader Anaplan suite.</li>
+        <li><strong>Deliver app-led</strong> — explain the load → set → customize approach, run the four-phase lifecycle, and lead a data-readiness conversation.</li>
+        <li><strong>Handle data and templates</strong> — describe the data OWP needs, which fields are mandatory, and how to work through dirty HR data and readiness gaps.</li>
+        <li><strong>Demo the CPP end to end</strong> — walk the workspace, create and transfer positions, run skills matching, and explain the WFB→CPP bridge in business terms.</li>
+        <li><strong>Explain the security model</strong> — describe user roles, the page-security matrix, and how selective access cascades across orgs and positions.</li>
+        <li><strong>Scope extensions cleanly</strong> — distinguish configure from extend, keep changes upgrade-safe, and know when work belongs in a separate model.</li>
+        <li><strong>Look ahead</strong> — position Optimizer and OWP-as-a-foundation for PRP, capacity, and demand planning, under safe-harbor.</li>
+      </ol>
+
+      <h2>How to Work Through This Guide</h2>
+      <p>This guide is <strong>self-paced</strong> — there are no scheduled sessions. Work through it in order, or jump to the section you need. The two pillars build on each other, so if you're new to OWP, start with <strong>Delivering OWP</strong> before the application tour. Move faster on what you already know and slower where you want to dig in.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Section</th><th>What it covers</th><th>How to engage</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Getting Started</strong></td>
+              <td>What OWP is, tenant access, and how to use this guide</td>
+              <td>Read-through</td>
+            </tr>
+            <tr>
+              <td><strong>Delivering OWP</strong></td>
+              <td>App-led delivery, the lifecycle, data readiness, extensions, timeline, integration</td>
+              <td>Read-through</td>
+            </tr>
+            <tr>
+              <td><strong>Workforce Budgeting (WFB)</strong></td>
+              <td>The budgeting half and how it feeds the CPP</td>
+              <td>Read-through</td>
+            </tr>
+            <tr>
+              <td><strong>Continuous Position Plan (CPP)</strong></td>
+              <td>The workspace, plan actions, transfers, and skills matching</td>
+              <td>Read-through + follow along and do the guided lab in your tenant</td>
+            </tr>
+            <tr>
+              <td><strong>Security &amp; Access</strong></td>
+              <td>User roles and selective access</td>
+              <td>Read-through + the selective-access lab</td>
+            </tr>
+            <tr>
+              <td><strong>Looking Ahead &amp; Reference</strong></td>
+              <td>Optimizer, foundation, Q&amp;A, resources, wrap-up</td>
+              <td>Reference — return as needed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📅 Pacing Note</span>
+        <p>The guided labs are the highest-value activity — protect that time. Where a walkthrough runs long, keep moving and come back to it. The Delivering-OWP pillar is what makes the application tour make sense, so work through it first rather than jumping ahead.</p>
+      </div>
+
+      <h2>Prerequisites</h2>
+      <p>To get the most out of this workshop, participants should have:</p>
+      <ul>
+        <li><strong>Basic Anaplan platform knowledge</strong> — familiarity with modules, lists, dashboards, and UX pages. This is not an Anaplan 101 session.</li>
+        <li><strong>Familiarity with pre-built apps</strong> — an understanding of what a packaged Anaplan app is and how app-led delivery differs from from-scratch model building.</li>
+        <li><strong>Access to an OWP training tenant</strong> — a partner workspace with the OWP app, required for the guided labs. Confirm access with your manager ahead of time (see <a href="./00-tenant-access.html">Tenant Access &amp; Prerequisites</a>).</li>
+        <li><strong>This lab guide open in a browser tab</strong> — keep it accessible throughout; each section maps to a workshop segment.</li>
+      </ul>
+
+      <h2>Workshop Materials</h2>
+      <p>Materials are distributed during the sales cycle and before kickoff. This guide is your primary reference — everything else supplements it.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Material</th><th>Used For</th></tr></thead>
+          <tbody>
+            <tr><td>This lab guide</td><td>Primary reference throughout — open in a browser tab the entire time</td></tr>
+            <tr><td>OWP data templates</td><td>The Excel workbook (one tab per object — position, employee, and more) with mandatory fields flagged; the basis of the data-readiness conversation</td></tr>
+            <tr><td>OWP solution guide</td><td>Functional and configuration reference for the app</td></tr>
+            <tr><td>Security &amp; selective-access documentation</td><td>The full user-roles and page-security matrix, plus walkthrough videos <em>(to be distributed after the sessions)</em></td></tr>
+            <tr><td>Training tenant access</td><td>Login IDs and selective access set up for the guided labs</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How WFB and CPP Connect</h2>
+      <p>OWP's two halves are designed to work as one loop. Understanding the hand-off is essential context before you tour either half.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">🔄 The Closed Loop</span>
+        <p>Budgeted positions are built in <strong>WFB</strong>, then <strong>published into the CPP</strong> via the bridge once the budget is closed. In the CPP they're planned, filled, transferred, and closed day to day — and every position carries an <strong>APID</strong> that keeps it linked to the HCM system through its whole lifecycle. That's the plan-to-hire loop OWP exists to close.</p>
+      </div>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./00-case-study.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>

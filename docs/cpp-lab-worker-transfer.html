@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Transfer a Worker — OWP Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>OWP Lab Guide</span>
+  </div>
+
+  <nav class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Transfer a Worker</h1>
+      <p class="subtitle">Move a worker into an open position — backfill or close</p>
+      <div class="badge-row">
+        <span class="content-badge">CPP</span>
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">Hands-On</span>
+        <span class="content-badge">15 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Confirm against your tenant</span>
+        <p>These steps follow what was shown in the workshop demo. Exact page names, button labels, and values vary by release and by your training tenant — treat the steps as a guide and confirm as you go. The <strong>Check my work</strong> button records your attempt; automated validation against Anaplan is not wired up yet.</p>
+      </div>
+
+      <div class="lab-objectives">
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Open <strong>Worker Transfer</strong> for <strong>Yumiko</strong>, a senior hardware engineer based in London, in your Golden Copy training tenant</li>
+          <li>Select a <strong>transfer period</strong> and search open positions in the CPP filtered to <strong>"hardware"</strong></li>
+          <li>Pick a <strong>target position</strong> from the results and enter a <strong>transfer reason</strong></li>
+          <li>Decide the <strong>Close Departing Position?</strong> flag — backfill the vacated position or close it</li>
+          <li>Schedule the transfer and review the <strong>Current vs Target Position</strong> panels</li>
+        </ul>
+      </div>
+
+      <h2>Exercise Overview</h2>
+      <p>In this lab you move an existing worker into an open position — an internal transfer. You'll work with <strong>Yumiko Mackenzie</strong>, a senior hardware engineer (senior associate) in London. Because selective access governs everything a user sees, the positions you can transfer to are the open and planned positions you have access to in the CPP. The key decision is what happens to the position Yumiko leaves behind: backfill it, or close it.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 How to use this lab</span>
+        <p>Work through the steps in your training tenant with real sample data. After each step, read what changes in the <strong>Current vs Target Position</strong> panels — that side-by-side is how you sanity-check a transfer before you schedule it. Remember transfers are scheduled at the <strong>month level</strong>, not the day.</p>
+      </div>
+
+      <hr>
+
+      <h2>Guided Steps — Transfer Yumiko</h2>
+
+      <blockquote>
+        <p><strong>Navigate to the CPP plan actions and open Worker Transfer for Yumiko Mackenzie.</strong></p>
+        <p>Start from Yumiko's worker card or from the Plan actions menu, then choose the worker-transfer action. Selective access limits the target positions you'll see to the orgs and positions you have rights to.</p>
+      </blockquote>
+
+      <ol class="lab-steps">
+        <li>Open <strong>Worker Transfer</strong> for <strong>Yumiko</strong> and confirm her current position: senior hardware engineer, senior associate, London.</li>
+        <li>Select a <strong>transfer period</strong>. Transfers schedule at the month level, so pick the month the move should take effect (for example, October).</li>
+        <li>Search all planned and open positions in the CPP, filtered to <strong>"hardware"</strong>. You should see open <strong>senior hardware engineer</strong> roles and a <strong>senior director of hardware engineering</strong> (which would require a move to Boston). An <strong>EA</strong> role in London is an alternative that keeps her in London.</li>
+        <li>Pick a <strong>target position</strong> from the results.</li>
+        <li>Enter a <strong>transfer reason</strong>.</li>
+        <li>Set the <strong>Close Departing Position?</strong> flag — leave it unchecked to <strong>backfill</strong> Yumiko's vacated position (its ID flips to <em>open</em>), or check it to <strong>close</strong> that position (its ID flips to <em>closed</em>).</li>
+        <li>Review the <strong>Current vs Target Position</strong> panels, then <strong>Schedule Transfer</strong>. When the model rolls to the transfer month, the move applies and actuals align as HCM data arrives.</li>
+      </ol>
+
+      <div class="screenshot-placeholder">
+        <span class="ss-icon">📸</span>
+        <span class="ss-label">[SCREENSHOT NEEDED: vacated position status after transfer — open vs closed]</span>
+        <span class="ss-desc">Yumiko's vacated position after the transfer resolves, showing its ID flipping to <em>open</em> (Close Departing Position? unchecked — backfill) versus <em>closed</em> (flag checked), so the backfill-vs-close outcome is visible.</span>
+      </div>
+
+      <img src="../img/screens/cpp-05-worker-transfer.jpg" alt="OWP Worker Transfer for Yumiko Mackenzie — select transfer period, target-position list, transfer reason, the Close Departing Position? backfill/close checkbox, Schedule Transfer, and Current vs Target Position panels" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <p style="font-size:0.8rem;color:#64748b;margin:-6px 0 18px;text-align:center;">Worker Transfer for Yumiko Mackenzie — transfer period, target-position search, reason, the Close Departing Position? flag, and the Current vs Target Position panels.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Confirm against your tenant</span>
+        <p>Transfers run <strong>one at a time</strong> — there's no mass transfer yet, and no approval process on a transfer: it executes when the scheduled month hits. Both are logged as future enhancements, so don't look for an approval step here.</p>
+      </div>
+
+      <div class="lab-quiz" data-correct="B">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Yumiko moves out of her senior hardware engineer position and you leave <strong>Close Departing Position?</strong> unchecked. What happens to the position she vacated?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-worker-backfill" value="A"><span class="lab-quiz-letter">A</span><span>It is deleted from the plan entirely</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-worker-backfill" value="B"><span class="lab-quiz-letter">B</span><span>Its position ID flips to <strong>open</strong> so it can be backfilled</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-worker-backfill" value="C"><span class="lab-quiz-letter">C</span><span>Its position ID flips to <strong>closed</strong> and can't be reused</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-worker-backfill" value="D"><span class="lab-quiz-letter">D</span><span>It automatically transfers to Boston with Yumiko</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> Leaving <strong>Close Departing Position?</strong> unchecked backfills the role — when the model rolls to the transfer month, the vacated position ID flips to <em>open</em> so it can be filled again. Checking the flag instead flips it to <em>closed</em>.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>B</strong>. Unchecked means <em>backfill</em>: the vacated position ID flips to <em>open</em>. You'd only get a <em>closed</em> position (answer C) by checking the flag — and the position is never deleted or dragged along with the worker.</div>
+      </div>
+
+      <div class="lab-quiz" data-correct="C">
+        <span class="lab-quiz-label">Quick check</span>
+        <h3>Why does an internal transfer of Yumiko into an open hardware role tell a better cost story than opening a brand-new requisition?</h3>
+        <div class="lab-quiz-options">
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-transfer-cost" value="A"><span class="lab-quiz-letter">A</span><span>A transfer skips selective access, so no one has to approve it</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-transfer-cost" value="B"><span class="lab-quiz-letter">B</span><span>Transfers are free because they don't touch the budget at all</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-transfer-cost" value="C"><span class="lab-quiz-letter">C</span><span>Moving an existing worker into an open position avoids the cost of recruiting and adding net-new headcount</span></label>
+          <label class="lab-quiz-option"><input type="radio" name="quiz-owp-transfer-cost" value="D"><span class="lab-quiz-letter">D</span><span>A transfer always reduces the worker's compensation</span></label>
+        </div>
+        <button type="button" class="lab-quiz-check">Check answer</button>
+        <div class="lab-quiz-feedback lab-quiz-feedback-correct"><strong>Correct.</strong> An internal transfer fills an open position with a worker you already have, so you avoid the recruiting cost and net-new headcount of a fresh req. The CPP surfaces that saving as you compare the Current vs Target panels — the worked example is exactly about internal-transfer cost savings.</div>
+        <div class="lab-quiz-feedback lab-quiz-feedback-wrong"><strong>Not quite.</strong> The right answer is <strong>C</strong>. The saving comes from filling an open role with existing headcount instead of recruiting new headcount. Transfers still respect selective access, still touch the plan and its costs, and don't automatically change the worker's pay.</div>
+      </div>
+
+      <div class="lab-check" data-check-id="owp-cpp-worker-transfer" data-workshop-slug="owp">
+        <p class="lab-check-prompt">When you've transferred Yumiko into a target hardware position, made the backfill-vs-close decision, and scheduled the move, click below to record your attempt.</p>
+        <button type="button" class="lab-check-button">Check my work</button>
+        <div class="lab-check-results" hidden>
+          <p class="lab-check-summary">Worker transfer scheduled for Yumiko.</p>
+          <ul class="lab-check-list">
+            <li><strong>Worker Transfer opened for Yumiko</strong> &rarr; current position confirmed (senior hardware engineer, London)</li>
+            <li><strong>Transfer period selected</strong> &rarr; the month the move takes effect</li>
+            <li><strong>Target position picked</strong> &rarr; chosen from the open/planned positions filtered to "hardware"</li>
+            <li><strong>Transfer reason entered</strong> &rarr; a reason recorded on the transfer</li>
+            <li><strong>Close Departing Position? decided</strong> &rarr; backfill (open) or close (closed) chosen deliberately</li>
+            <li><strong>Schedule Transfer run</strong> &rarr; move scheduled after reviewing Current vs Target Position</li>
+          </ul>
+          <p class="lab-check-next">Next: Skills Matching — find internal candidates by skill.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <ol>
+        <li>You chose to backfill Yumiko's vacated position rather than close it. What in the org's plan would make you choose the opposite — closing the position instead?</li>
+        <li>The senior director of hardware engineering role would move Yumiko to Boston, while the EA role keeps her in London. How would you weigh the cost, skills fit, and location trade-offs when advising the manager?</li>
+        <li>There is no approval step on a transfer — it just executes when the month hits. If a customer needs sign-off before a worker moves, how would you frame that as a future enhancement versus something to handle with selective access today?</li>
+        <li>Transfers are one at a time and scheduled at the month level. What would you tell a customer who wants to move a whole team on a specific day?</li>
+      </ol>
+
+      <div class="prevnext-nav">
+        <a class="prevnext-btn" href="./cpp-lab-position-transfer.html">← Previous</a>
+        <a class="prevnext-btn" href="./cpp-06-skills-matching.html">Next →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/lab-quiz.js"></script>
+  <script src="../js/progress.js"></script>
+</body>
+</html>
